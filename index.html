@@ -1,652 +1,267 @@
 
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>G&T Sauberstark | Trockenbau & Renovierung</title>
-<meta name="description" content="G&T Sauberstark aus Herne: Trockenbau, Spachtelarbeiten, Renovierung und weitere Dienstleistungen.">
 <style>
-:root {
-  --bg:#111416;
-  --panel:#202528;
-  --orange:#ff792c;
-  --text:#f5f5f2;
-  --muted:#b6babb;
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
-a { color:inherit; }
-header {
-  background:#111416f5;
-  border-bottom:1px solid #353a3d;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-nav {
-  max-width:1100px;
-  margin:auto;
-  padding:18px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-.logo { font-weight:900; font-size:20px; }
-.logo span,.orange { color:var(--orange); }
-nav a { text-decoration:none; }
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:0 20px;
-}
-section { padding:75px 0; }
-.hero {
-  padding:115px 0;
-  background:
-    radial-gradient(circle at 85% 30%,#4d2c1b,transparent 45%),
-    linear-gradient(130deg,#111416,#252b2f);
-}
-.kicker {
-  color:var(--orange);
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-h1 {
-  font-size:clamp(42px,8vw,85px);
-  line-height:1.04;
-  margin:20px 0;
-  letter-spacing:-3px;
-}
-h2 {
-  font-size:clamp(30px,5vw,48px);
-  line-height:1.12;
-  margin:15px 0 25px;
-}
-p { color:var(--muted); }
-.hero p { max-width:650px; font-size:19px; }
-.btn {
-  display:inline-block;
-  padding:15px 23px;
-  margin:10px 10px 0 0;
-  border:0;
-  border-radius:7px;
-  background:var(--orange);
-  color:#111;
-  font-weight:bold;
-  text-decoration:none;
-  cursor:pointer;
-}
-.btn.secondary {
-  background:transparent;
-  color:white;
-  border:1px solid #777;
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.card {
-  background:var(--panel);
-  border:1px solid #3a4145;
-  padding:25px;
-  border-radius:12px;
-}
-.card h3 { color:white; }
-.card p { margin-bottom:0; }
-.light {
-  background:#e9e4dc;
-  color:#1b2023;
-}
-.light p { color:#555; }
-
-/* Interaktiver Vorher-Nachher-Vergleich */
-.compare {
-  position:relative;
-  height:350px;
-  overflow:hidden;
-  border-radius:14px;
-  border:4px solid #3b4246;
-  touch-action:pan-y;
-  cursor:ew-resize;
-}
-.scene {
-  position:absolute;
-  inset:0;
-}
-.before {
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 115px,
-      #6b6965 116px 119px
-    ),
-    linear-gradient(120deg,#b1ada4,#898c88);
-}
-.after {
-  background:linear-gradient(120deg,#eeeae2,#ccc9c2);
-}
-.floor {
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:23%;
-  background:repeating-linear-gradient(
-    90deg,#8b705b 0 90px,#634c3d 91px 94px
-  );
-  border-top:8px solid #6e6258;
-}
-.after .floor {
-  background:#b6a08c;
-  border-top:8px solid #e8e1d7;
-}
-.tag {
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:#171a1de8;
-  padding:7px 12px;
-  border-radius:5px;
-  font-size:12px;
-  font-weight:bold;
-}
-.after .tag { left:auto;right:15px; }
-.after-cover {
-  position:absolute;
-  inset:0;
-  clip-path:inset(0 0 0 50%);
-}
-.divider {
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:50%;
-  width:4px;
-  background:white;
-  pointer-events:none;
-}
-.handle {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:var(--orange);
-  color:#111;
-  border:4px solid white;
-  display:grid;
-  place-items:center;
-  font-size:26px;
-  font-weight:bold;
-  pointer-events:none;
-}
-input[type=range] {
-  width:100%;
-  accent-color:var(--orange);
-  cursor:pointer;
-}
-.compare-note {
-  font-size:13px;
-  margin-top:15px;
-}
-
-/* Projekt-Konfigurator */
-.config {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-}
-.field { margin-bottom:22px; }
-label { display:block;margin-bottom:8px; }
-select,input[type=text] {
-  width:100%;
-  padding:13px;
-  border-radius:7px;
-  border:1px solid #60696e;
-  background:#111416;
-  color:white;
-  font:inherit;
-}
-.check {
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:10px 0;
-}
-.check input { accent-color:var(--orange); }
-.summary {
-  background:#e9e4dc;
-  color:#1b2023;
-  border-radius:12px;
-  padding:28px;
-}
-.summary p { color:#4e5659; }
-.summary .line {
-  padding:12px 0;
-  border-bottom:1px solid #bbb4aa;
-}
-.summary strong { display:block; }
-.small { font-size:13px; }
-.other {
-  border-top:1px solid #343b3f;
-}
-.contact {
-  background:linear-gradient(130deg,#ff8b43,#db5a18);
-  color:#111;
-}
-.contact p { color:#29201c; }
-.contact a { font-weight:bold; }
-footer {
-  padding:35px 20px;
-  text-align:center;
-  color:#b6babb;
-}
-footer a { margin:0 10px; }
-@media(max-width:750px) {
-  .grid,.config { grid-template-columns:1fr; }
-  section { padding:55px 0; }
-  .hero { padding:85px 0; }
-  .compare { height:280px; }
-  nav { flex-wrap:wrap; }
-  h1 { letter-spacing:-1px; }
-}
+:root{--orange:#ff792c;--bg:#111518;--panel:#20272b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif;line-height:1.6}
+a{color:inherit}
+header{padding:18px 6%;border-bottom:1px solid #394147;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:20px;font-weight:900}
+.orange{color:var(--orange)}
+nav a{margin-left:16px;text-decoration:none;font-size:14px}
+section{padding:65px 6%}
+.wrap{max-width:1100px;margin:auto}
+.hero{background:radial-gradient(circle at 80% 20%,#53301d,transparent 50%),#111518;padding:95px 6%}
+h1{font-size:clamp(40px,7vw,78px);line-height:1.06;margin:12px 0}
+h2{font-size:clamp(29px,4vw,45px);line-height:1.15}
+h3{margin-bottom:8px}
+p{color:#c0c5c7}
+.kicker{color:var(--orange);font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.btn{display:inline-block;background:var(--orange);color:#141414;padding:13px 20px;border:0;border-radius:7px;text-decoration:none;font-weight:bold;cursor:pointer}
+.panel{background:var(--panel);border:1px solid #3c454a;border-radius:14px;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.controls button{background:#293137;color:white;border:1px solid #626b70;border-radius:7px;padding:11px 15px;cursor:pointer}
+.controls button.active{background:var(--orange);color:#151515;border-color:var(--orange)}
+.stage{position:relative;overflow:hidden;border-radius:14px;border:3px solid #465058;background:#222;height:370px;cursor:ew-resize;touch-action:pan-y}
+.layer{position:absolute;inset:0}
+.room{position:absolute;inset:0;background:linear-gradient(#aeb2b0 0 72%,#8e7966 72% 100%)}
+.wall{position:absolute;left:12%;top:8%;width:76%;height:64%;background:#aaa9a3;clip-path:polygon(0 0,100% 0,100% 100%,0 100%);box-shadow:inset 0 0 50px #777}
+.before .wall{background:repeating-linear-gradient(90deg,#989a95 0 13%,#666b68 13.3% 14%,#b0b0a8 14.3% 27%)}
+.before .wall:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 48px,#6669 49px 51px)}
+.after .room{background:linear-gradient(#dddcd5 0 72%,#b69c80 72% 100%)}
+.after .wall{background:linear-gradient(120deg,#f3f1e9,#d9d7cf)}
+.window{position:absolute;top:19%;right:20%;width:21%;height:29%;background:linear-gradient(145deg,#b3d6e6,#7fabbf);border:9px solid #e7e5dc;box-shadow:0 4px 12px #3335}
+.before .window{border-color:#777b7a}
+.floorlines{position:absolute;bottom:0;width:100%;height:28%;background:repeating-linear-gradient(90deg,transparent 0 105px,#564737 106px 109px);opacity:.5}
+.after .floorlines{opacity:.25}
+.caption{position:absolute;top:15px;left:15px;background:#101619dd;padding:7px 12px;border-radius:5px;font-size:12px;font-weight:bold}
+.after .caption{left:auto;right:15px}
+.afterclip{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
+.split{position:absolute;left:50%;top:0;bottom:0;width:4px;background:white;pointer-events:none}
+.knob{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--orange);border:4px solid white;color:#151515;display:grid;place-items:center;font-size:25px;font-weight:bold;pointer-events:none}
+input[type=range]{width:100%;accent-color:var(--orange)}
+.note{font-size:13px;color:#aeb4b7}
+.config{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{display:block;margin:12px 0}
+select,input[type=text]{width:100%;padding:12px;background:#111518;border:1px solid #606b70;color:white;border-radius:6px}
+.check{display:flex;gap:9px;align-items:center}
+.check input{accent-color:var(--orange)}
+.summary{background:#e8e3da;color:#181c1e}
+.summary p{color:#4b5154}
+.summary div{padding:10px 0;border-bottom:1px solid #bbb}
+.summary strong{display:block}
+footer{text-align:center;padding:35px;border-top:1px solid #394147}
+footer a{margin:0 12px}
+@media(max-width:750px){.grid,.config{grid-template-columns:1fr}.stage{height:280px}nav a{margin-left:8px;font-size:12px}}
 </style>
 </head>
 <body>
 
 <header>
-<nav>
-  <a href="#start" class="logo">G&T <span>SAUBERSTARK</span></a>
-  <a href="#projekt" class="btn">Projekt anfragen</a>
-</nav>
+<div class="logo">G&T <span class="orange">SAUBERSTARK</span></div>
+<nav><a href="#visual">Visualisierung</a><a href="#projekt">Anfrage</a></nav>
 </header>
 
-<main>
-<section class="hero" id="start">
-<div class="container">
-  <div class="kicker">Trockenbau · Spachtelarbeiten · Herne</div>
-  <h1>WIR SCHAFFEN<br><span class="orange">NEUE RÄUME.</span></h1>
-  <p>
-    Trockenbau, Spachtelarbeiten und Renovierung.
-    Entdecke interaktiv, wie sich ein Raum verändern kann.
-  </p>
-  <a href="#visualisierung" class="btn">Veränderung erleben</a>
-  <a href="#projekt" class="btn secondary">Projekt planen</a>
+<section class="hero">
+<div class="wrap">
+<div class="kicker">Trockenbau · Spachtelarbeiten · Herne</div>
+<h1>RÄUME NEU<br><span class="orange">GESTALTEN.</span></h1>
+<p>Trockenbau und Spachtelarbeiten als unser Schwerpunkt. Entdecke die Möglichkeiten einer Raumveränderung interaktiv.</p>
+<a class="btn" href="#visual">Raum entdecken</a>
 </div>
 </section>
 
-<section id="visualisierung">
-<div class="container">
-  <div class="kicker">Interaktive Visualisierung</div>
-  <h2>ZIEH DEN REGLER.<br>SIEH DIE VERÄNDERUNG.</h2>
-  <p>
-    Bewege den Regler nach links oder rechts.
-    Vergleiche den Rohzustand mit einer fertigen Wandoberfläche.
-  </p>
+<section id="visual">
+<div class="wrap">
+<div class="kicker">Interaktiver Raumvergleich</div>
+<h2>VOM ROHZUSTAND<br>ZUR FERTIGEN WAND.</h2>
+<p>Ziehe direkt über das Bild oder benutze den Regler darunter.</p>
 
-  <div class="compare" id="compare">
-    <div class="scene before">
-      <div class="floor"></div>
-      <div class="tag">VORHER</div>
-    </div>
+<div class="stage" id="stage" aria-label="Interaktiver Vorher-Nachher-Vergleich">
+<div class="layer before">
+<div class="room"></div><div class="wall"></div>
+<div class="window"></div><div class="floorlines"></div>
+<div class="caption">ROHZUSTAND</div>
+</div>
+<div class="afterclip" id="clip">
+<div class="layer after">
+<div class="room"></div><div class="wall"></div>
+<div class="window"></div><div class="floorlines"></div>
+<div class="caption">FERTIG</div>
+</div>
+</div>
+<div class="split" id="split"></div>
+<div class="knob" id="knob">↔</div>
+</div>
 
-    <div class="after-cover" id="afterCover">
-      <div class="scene after">
-        <div class="floor"></div>
-        <div class="tag">NACHHER</div>
-      </div>
-    </div>
+<label for="slider">Raumvergleich verschieben</label>
+<input type="range" id="slider" min="0" max="100" value="50">
 
-    <div class="divider" id="divider"></div>
-    <div class="handle" id="handle">↔</div>
-  </div>
-
-  <label for="slider">Vorher-Nachher-Vergleich</label>
-  <input id="slider" type="range" min="0" max="100" value="50">
-  <p class="compare-note">
-    Schematische Illustration, kein Foto einer ausgeführten Arbeit.
-  </p>
+<div class="controls">
+<button type="button" onclick="setCompare(100)">Vorher</button>
+<button type="button" onclick="setCompare(50)">Vergleichen</button>
+<button type="button" onclick="setCompare(0)">Nachher</button>
+</div>
+<p class="note">Schematische Raumvisualisierung. Keine echte Fotodokumentation oder technische Bauplanung.</p>
 </div>
 </section>
 
-<section class="light">
-<div class="container">
-  <div class="kicker">Vom Rohbau zur Oberfläche</div>
-  <h2>DREI SCHRITTE ZUM ERGEBNIS.</h2>
-
-  <div class="grid">
-    <div class="card" style="background:white">
-      <h3 style="color:#222">01 · Konstruktion</h3>
-      <p>Unterkonstruktion für neue Raumaufteilungen.</p>
-    </div>
-    <div class="card" style="background:white">
-      <h3 style="color:#222">02 · Beplankung</h3>
-      <p>Montage geeigneter Trockenbauplatten.</p>
-    </div>
-    <div class="card" style="background:white">
-      <h3 style="color:#222">03 · Oberfläche</h3>
-      <p>Spachteln und Schleifen nach vereinbartem Umfang.</p>
-    </div>
-  </div>
+<section style="background:#1a2024">
+<div class="wrap">
+<div class="kicker">Unser Schwerpunkt</div>
+<h2>TROCKENBAU & OBERFLÄCHEN.</h2>
+<div class="grid">
+<div class="panel"><h3>Trockenbauwände</h3><p>Raumaufteilungen und nichttragende Trennwände.</p></div>
+<div class="panel"><h3>Beplankung</h3><p>Montage geeigneter Trockenbauplatten.</p></div>
+<div class="panel"><h3>Spachteln & Schleifen</h3><p>Oberflächenbearbeitung nach vereinbartem Umfang.</p></div>
+</div>
 </div>
 </section>
 
 <section id="projekt">
-<div class="container">
-  <div class="kicker">Dein Projekt</div>
-  <h2>STELL DEIN PROJEKT ZUSAMMEN.</h2>
-  <p>
-    Wähle deine gewünschten Arbeiten.
-    Wir erstellen daraus eine unverbindliche Anfrage.
-  </p>
+<div class="wrap">
+<div class="kicker">Unverbindliche Projektanfrage</div>
+<h2>DEIN PROJEKT PLANEN.</h2>
+<div class="config">
+<div class="panel">
+<label for="area">Geschätzte Fläche: <strong id="areaValue">25 m²</strong></label>
+<input type="range" id="area" min="5" max="150" step="5" value="25">
 
-  <div class="config">
-    <div class="card">
-      <div class="field">
-        <label for="area">
-          Geschätzte Fläche:
-          <strong id="areaText">25 m²</strong>
-        </label>
-        <input id="area" type="range"
-               min="5" max="150" step="5" value="25">
-      </div>
+<p>Gewünschte Arbeiten:</p>
+<label class="check"><input type="checkbox" class="work" value="Trockenbauwand" checked> Trockenbauwand</label>
+<label class="check"><input type="checkbox" class="work" value="Beplankung"> Beplankung</label>
+<label class="check"><input type="checkbox" class="work" value="Spachtelarbeiten" checked> Spachtelarbeiten</label>
+<label class="check"><input type="checkbox" class="work" value="Schleifarbeiten"> Schleifarbeiten</label>
 
-      <div class="field">
-        <strong>Welche Arbeiten brauchst du?</strong>
-        <label class="check">
-          <input type="checkbox" id="wall" checked>
-          Trockenbauwand
-        </label>
-        <label class="check">
-          <input type="checkbox" id="boards">
-          Beplankung
-        </label>
-        <label class="check">
-          <input type="checkbox" id="putty" checked>
-          Spachtelarbeiten
-        </label>
-        <label class="check">
-          <input type="checkbox" id="sanding">
-          Schleifarbeiten
-        </label>
-      </div>
-
-      <div class="field">
-        <label for="quality">Oberflächenqualität</label>
-        <select id="quality">
-          <option value="Noch unklar">Noch unklar</option>
-          <option value="Q1">Q1</option>
-          <option value="Q2">Q2</option>
-          <option value="Q3">Q3</option>
-          <option value="Q4">Q4</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="city">Projektort</label>
-        <input id="city" type="text"
-               maxlength="80"
-               placeholder="z. B. Herne">
-      </div>
-    </div>
-
-    <div class="summary">
-      <h3>Deine Projektübersicht</h3>
-      <div class="line">
-        Fläche
-        <strong id="resultArea">25 m²</strong>
-      </div>
-      <div class="line">
-        Gewünschte Arbeiten
-        <strong id="resultWorks">Trockenbauwand, Spachtelarbeiten</strong>
-      </div>
-      <div class="line">
-        Oberflächenqualität
-        <strong id="resultQuality">Noch unklar</strong>
-      </div>
-      <div class="line">
-        Projektort
-        <strong id="resultCity">Nicht angegeben</strong>
-      </div>
-
-      <p class="small">
-        Kein verbindliches Angebot und keine automatische
-        Preisberechnung. Die Ausführung und Kosten
-        hängen von den tatsächlichen Bedingungen ab.
-      </p>
-
-      <button class="btn" id="send" type="button">
-        Anfrage per E-Mail vorbereiten
-      </button>
-
-      <p class="small">
-        Öffnet dein E-Mail-Programm.
-        Die Nachricht wird nicht automatisch versendet.
-      </p>
-    </div>
-  </div>
+<label for="quality">Oberflächenqualität</label>
+<select id="quality">
+<option>Noch unklar</option><option>Q1</option><option>Q2</option><option>Q3</option><option>Q4</option>
+</select>
+<label for="city">Projektort</label>
+<input id="city" type="text" maxlength="80" placeholder="z. B. Herne">
+</div>
+<div class="panel summary">
+<h3>Deine Projektübersicht</h3>
+<div>Fläche<strong id="outArea">25 m²</strong></div>
+<div>Arbeiten<strong id="outWorks"></strong></div>
+<div>Qualität<strong id="outQuality"></strong></div>
+<div>Ort<strong id="outCity"></strong></div>
+<p>Die Angaben dienen nur der Anfrage. Es wird kein verbindlicher Preis berechnet.</p>
+<button type="button" class="btn" id="send">E-Mail-Anfrage vorbereiten</button>
+<p class="note">Dein E-Mail-Programm wird geöffnet. Du versendest die Nachricht selbst.</p>
+</div>
+</div>
 </div>
 </section>
 
-<section id="leistungen">
-<div class="container">
-  <div class="kicker">Unser Schwerpunkt</div>
-  <h2>TROCKENBAU & SPACHTELARBEITEN.</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Trockenbau</h3>
-      <p>Neue Trennwände und Raumaufteilungen.</p>
-    </div>
-    <div class="card">
-      <h3>Spachtelarbeiten</h3>
-      <p>Oberflächenqualitäten Q1 bis Q4 nach Vereinbarung.</p>
-    </div>
-    <div class="card">
-      <h3>Schleifarbeiten</h3>
-      <p>Vorbereitung von Wandflächen für Folgearbeiten.</p>
-    </div>
-  </div>
-
-  <p class="small">
-    Leistungen nur im Rahmen der gewerbe- und
-    handwerksrechtlich zulässigen Tätigkeiten.
-  </p>
+<section>
+<div class="wrap">
+<div class="kicker">Weitere Dienstleistungen</div>
+<h2>AUCH DARUM KÜMMERN WIR UNS.</h2>
+<div class="grid">
+<div class="panel"><h3>Entrümpelung</h3><p>Wohnungen, Keller und Garagen.</p></div>
+<div class="panel"><h3>Gebäudereinigung</h3><p>Unterhalts-, Glas- und Bauendreinigung.</p></div>
+<div class="panel"><h3>Hochdruckreinigung</h3><p>Terrassen, Einfahrten und geeignete Flächen.</p></div>
+<div class="panel"><h3>Gartenpflege</h3><p>Rasen, Hecken und Unkraut.</p></div>
+<div class="panel"><h3>Hausmeisterhilfe</h3><p>Objektbetreuung und kleinere Arbeiten.</p></div>
+<div class="panel"><h3>Montagehilfe</h3><p>Unterstützung bei zulässigen Montagearbeiten.</p></div>
+</div>
 </div>
 </section>
 
-<section class="other">
-<div class="container">
-  <div class="kicker">Weitere Dienstleistungen</div>
-  <h2>MEHR ALS TROCKENBAU.</h2>
-  <p>
-    Neben unserem Schwerpunkt unterstützen wir
-    Privatkunden und Unternehmen bei weiteren Arbeiten.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Entrümpelung</h3>
-      <p>Wohnungen, Keller, Garagen und Räumungen.</p>
-    </div>
-    <div class="card">
-      <h3>Gebäudereinigung</h3>
-      <p>Unterhaltsreinigung, Glasreinigung und Bauendreinigung.</p>
-    </div>
-    <div class="card">
-      <h3>Hochdruckreinigung</h3>
-      <p>Terrassen, Einfahrten und geeignete Außenflächen.</p>
-    </div>
-    <div class="card">
-      <h3>Gartenpflege</h3>
-      <p>Rasenmähen, Heckenschnitt und Unkrautentfernung.</p>
-    </div>
-    <div class="card">
-      <h3>Hausmeisterservice</h3>
-      <p>Objektbetreuung und kleinere Hilfsarbeiten.</p>
-    </div>
-    <div class="card">
-      <h3>Montagehilfe</h3>
-      <p>Unterstützung bei zulässigen Montagearbeiten.</p>
-    </div>
-  </div>
+<section style="background:#e77732;color:#141414">
+<div class="wrap">
+<h2>PROJEKT IN PLANUNG?</h2>
+<p style="color:#252525">G&T Sauberstark GbR · Herne und Umgebung</p>
+<p><a href="tel:+4917664951829">0176 64951829</a></p>
+<p><a href="mailto:Hochdruckreinigung44@gmail.com">Hochdruckreinigung44@gmail.com</a></p>
 </div>
 </section>
-
-<section class="contact" id="kontakt">
-<div class="container">
-  <div class="kicker" style="color:#222">G&T Sauberstark GbR</div>
-  <h2>DU PLANST EIN PROJEKT?<br>KONTAKTIERE UNS.</h2>
-  <p>Herne und Umgebung</p>
-  <p>
-    Telefon:
-    <a href="tel:+4917664951829">0176 64951829</a>
-  </p>
-  <p>
-    E-Mail:
-    <a href="mailto:Hochdruckreinigung44@gmail.com">
-      Hochdruckreinigung44@gmail.com
-    </a>
-  </p>
-  <a class="btn secondary" href="#projekt">
-    Projekt konfigurieren
-  </a>
-</div>
-</section>
-</main>
 
 <footer>
-  <p>© <span id="year"></span> G&T Sauberstark GbR · Herne</p>
-  <a href="impressum.html">Impressum</a>
-  <a href="datenschutz.html">Datenschutz</a>
+<p>© <span id="year"></span> G&T Sauberstark GbR</p>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
 </footer>
 
 <script>
-const slider = document.getElementById("slider");
-const cover = document.getElementById("afterCover");
-const divider = document.getElementById("divider");
-const handle = document.getElementById("handle");
-const compare = document.getElementById("compare");
+const slider=document.getElementById("slider");
+const stage=document.getElementById("stage");
+const clip=document.getElementById("clip");
+const split=document.getElementById("split");
+const knob=document.getElementById("knob");
 
-function moveSlider(value) {
-  value = Math.max(0, Math.min(100, Number(value)));
-  cover.style.clipPath = `inset(0 0 0 ${value}%)`;
-  divider.style.left = value + "%";
-  handle.style.left = value + "%";
-  slider.value = value;
+function setCompare(v){
+v=Math.max(0,Math.min(100,Number(v)));
+slider.value=v;
+clip.style.clipPath=`inset(0 0 0 ${v}%)`;
+split.style.left=v+"%";
+knob.style.left=v+"%";
 }
-
-slider.addEventListener("input", function() {
-  moveSlider(this.value);
-});
-
-let dragging = false;
-
-function moveFromPointer(event) {
-  const rect = compare.getBoundingClientRect();
-  const percent = (event.clientX - rect.left) / rect.width * 100;
-  moveSlider(percent);
+slider.addEventListener("input",()=>setCompare(slider.value));
+let dragging=false;
+function pointerMove(e){
+const r=stage.getBoundingClientRect();
+setCompare((e.clientX-r.left)/r.width*100);
 }
-
-compare.addEventListener("pointerdown", event => {
-  dragging = true;
-  compare.setPointerCapture(event.pointerId);
-  moveFromPointer(event);
+stage.addEventListener("pointerdown",e=>{
+dragging=true;
+stage.setPointerCapture(e.pointerId);
+pointerMove(e);
 });
-
-compare.addEventListener("pointermove", event => {
-  if (dragging) moveFromPointer(event);
+stage.addEventListener("pointermove",e=>{
+if(dragging)pointerMove(e);
 });
+stage.addEventListener("pointerup",()=>dragging=false);
+stage.addEventListener("pointercancel",()=>dragging=false);
+setCompare(50);
 
-compare.addEventListener("pointerup", () => dragging = false);
-compare.addEventListener("pointercancel", () => dragging = false);
-
-moveSlider(50);
-
-const area = document.getElementById("area");
-const quality = document.getElementById("quality");
-const city = document.getElementById("city");
-
-const choices = [
-  ["wall", "Trockenbauwand"],
-  ["boards", "Beplankung"],
-  ["putty", "Spachtelarbeiten"],
-  ["sanding", "Schleifarbeiten"]
-];
-
-function selectedWorks() {
-  return choices
-    .filter(([id]) => document.getElementById(id).checked)
-    .map(([,name]) => name);
+const area=document.getElementById("area");
+const quality=document.getElementById("quality");
+const city=document.getElementById("city");
+function works(){
+return [...document.querySelectorAll(".work:checked")].map(x=>x.value);
 }
-
-function updateProject() {
-  const size = area.value + " m²";
-  document.getElementById("areaText").textContent = size;
-  document.getElementById("resultArea").textContent = size;
-  document.getElementById("resultWorks").textContent =
-    selectedWorks().join(", ") || "Keine Auswahl";
-  document.getElementById("resultQuality").textContent = quality.value;
-  document.getElementById("resultCity").textContent =
-    city.value.trim() || "Nicht angegeben";
+function update(){
+document.getElementById("areaValue").textContent=area.value+" m²";
+document.getElementById("outArea").textContent=area.value+" m²";
+document.getElementById("outWorks").textContent=works().join(", ")||"Keine Auswahl";
+document.getElementById("outQuality").textContent=quality.value;
+document.getElementById("outCity").textContent=city.value.trim()||"Nicht angegeben";
 }
-
-document.querySelectorAll("#projekt input, #projekt select")
-  .forEach(el => {
-    el.addEventListener("input", updateProject);
-    el.addEventListener("change", updateProject);
-  });
-
-document.getElementById("send").addEventListener("click", () => {
-  const works = selectedWorks();
-
-  if (!works.length) {
-    alert("Bitte wähle mindestens eine Arbeit aus.");
-    return;
-  }
-
-  const subject = "Unverbindliche Projektanfrage G&T Sauberstark";
-  const body = [
-    "Guten Tag,",
-    "",
-    "ich möchte folgendes Projekt anfragen:",
-    "",
-    "Fläche: " + area.value + " m²",
-    "Arbeiten: " + works.join(", "),
-    "Oberflächenqualität: " + quality.value,
-    "Projektort: " + (city.value.trim() || "Noch offen"),
-    "",
-    "Weitere Informationen:",
-    "",
-    "Meine Kontaktdaten:",
-    "",
-    "Mit freundlichen Grüßen"
-  ].join("\n");
-
-  window.location.href =
-    "mailto:Hochdruckreinigung44@gmail.com?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
+document.querySelectorAll("#projekt input,#projekt select").forEach(x=>{
+x.addEventListener("input",update);
+x.addEventListener("change",update);
 });
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-updateProject();
+document.getElementById("send").addEventListener("click",()=>{
+if(!works().length){alert("Bitte eine Arbeit auswählen.");return;}
+const subject="Projektanfrage G&T Sauberstark";
+const body=[
+"Guten Tag,",
+"",
+"Ich möchte folgendes Projekt anfragen:",
+"Fläche: "+area.value+" m²",
+"Arbeiten: "+works().join(", "),
+"Oberflächenqualität: "+quality.value,
+"Ort: "+(city.value.trim()||"Noch offen"),
+"",
+"Weitere Informationen:",
+"",
+"Meine Kontaktdaten:"
+].join("\n");
+location.href="mailto:Hochdruckreinigung44@gmail.com?subject="+
+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+update();
 </script>
 </body>
 </html>
