@@ -4,464 +4,649 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101112">
-<meta name="description" content="G&T Sauberstark GbR aus Herne: Renovierung, Trockenbau, Reinigung, Entrümpelung, Gartenpflege und Objektservice. Jetzt unverbindlich anfragen.">
-<title>G&T SAUBERSTARK | Wir packen an.</title>
+<title>G&T Sauberstark | Trockenbau & Renovierung</title>
+<meta name="description" content="G&T Sauberstark aus Herne: Trockenbau, Spachtelarbeiten, Renovierung und weitere Dienstleistungen.">
 <style>
 :root {
-  --bg:#101112;
-  --surface:#1b1d1f;
-  --surface2:#242629;
-  --orange:#ff671f;
-  --white:#f5f5f2;
-  --muted:#afb0b0;
-  --line:#393b3d;
+  --bg:#111416;
+  --panel:#202528;
+  --orange:#ff792c;
+  --text:#f5f5f2;
+  --muted:#b6babb;
 }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
   margin:0;
-  background:var(--bg);
-  color:var(--white);
   font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
   line-height:1.6;
 }
 a { color:inherit; }
-button,input,textarea,select { font:inherit; }
-button { cursor:pointer; }
-.container { width:min(1160px,90%); margin:auto; }
-.eyebrow {
-  color:var(--orange);
-  font-weight:800;
-  letter-spacing:3px;
-  font-size:12px;
-  text-transform:uppercase;
-}
-h1,h2,h3 { line-height:1.1; letter-spacing:-1px; }
-h1 { font-size:clamp(46px,8vw,100px); margin:18px 0; }
-h2 { font-size:clamp(32px,5vw,56px); margin:12px 0 25px; }
-p { color:var(--muted); }
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:15px 23px;
-  min-height:52px;
-  border:1px solid var(--orange);
-  background:var(--orange);
-  color:#111;
-  font-weight:900;
-  text-decoration:none;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  transition:transform .2s,background .2s;
-}
-.btn:hover { transform:translateY(-3px); background:#ff8a4d; }
-.btn.outline { background:transparent; color:white; border-color:#777; }
-.btn.outline:hover { border-color:var(--orange); }
 header {
+  background:#111416f5;
+  border-bottom:1px solid #353a3d;
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(16,17,18,.97);
-  border-bottom:1px solid var(--line);
+  z-index:10;
 }
-.nav {
-  min-height:76px;
+nav {
+  max-width:1100px;
+  margin:auto;
+  padding:18px 20px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.brand {
-  text-decoration:none;
-  font-size:22px;
-  font-weight:950;
-  letter-spacing:-1px;
-}
-.brand span { color:var(--orange); }
-nav { display:flex; gap:25px; align-items:center; }
-nav a { text-decoration:none; font-weight:700; font-size:13px; }
-nav a:hover { color:var(--orange); }
-.hero {
-  min-height:690px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(90deg,rgba(12,13,14,.98) 0%,rgba(12,13,14,.9) 50%,rgba(12,13,14,.35) 100%),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85") center/cover;
-}
-.hero-content { position:relative; padding:90px 0; }
-.hero h1 { max-width:900px; text-transform:uppercase; }
-.hero h1 span { color:var(--orange); }
-.hero p { max-width:610px; font-size:19px; color:#ddd; }
-.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
-.hero-line {
-  width:80px;
-  height:5px;
-  background:var(--orange);
-  margin-bottom:25px;
-}
-.strip { background:var(--orange); color:#111; }
-.strip .container {
-  display:flex;
-  flex-wrap:wrap;
   justify-content:space-between;
   gap:15px;
-  padding:18px 0;
-  font-size:13px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:1px;
 }
-section { padding:105px 0; }
-.section-intro { max-width:720px; margin-bottom:42px; }
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
+.logo { font-weight:900; font-size:20px; }
+.logo span,.orange { color:var(--orange); }
+nav a { text-decoration:none; }
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
 }
-.service {
-  position:relative;
-  padding:32px;
-  background:var(--surface);
-  border:1px solid var(--line);
-  min-height:275px;
-  transition:transform .25s,border-color .25s;
-}
-.service:hover {
-  transform:translateY(-6px);
-  border-color:var(--orange);
-}
-.number { font-size:13px; font-weight:900; color:var(--orange); }
-.service h3 { font-size:25px; margin:30px 0 12px; }
-.service p { margin:0; font-size:15px; }
-.about { background:var(--surface); }
-.about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-.about-visual {
-  min-height:410px;
+section { padding:75px 0; }
+.hero {
+  padding:115px 0;
   background:
-    linear-gradient(0deg,rgba(16,17,18,.35),rgba(16,17,18,.1)),
-    url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=85") center/cover;
-  border-bottom:7px solid var(--orange);
+    radial-gradient(circle at 85% 30%,#4d2c1b,transparent 45%),
+    linear-gradient(130deg,#111416,#252b2f);
 }
-.feature {
-  border-left:3px solid var(--orange);
-  padding-left:17px;
-  margin:23px 0;
+.kicker {
+  color:var(--orange);
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
-.feature strong { display:block; font-size:18px; }
-.feature p { margin:4px 0; }
-.process-grid {
+h1 {
+  font-size:clamp(42px,8vw,85px);
+  line-height:1.04;
+  margin:20px 0;
+  letter-spacing:-3px;
+}
+h2 {
+  font-size:clamp(30px,5vw,48px);
+  line-height:1.12;
+  margin:15px 0 25px;
+}
+p { color:var(--muted); }
+.hero p { max-width:650px; font-size:19px; }
+.btn {
+  display:inline-block;
+  padding:15px 23px;
+  margin:10px 10px 0 0;
+  border:0;
+  border-radius:7px;
+  background:var(--orange);
+  color:#111;
+  font-weight:bold;
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn.secondary {
+  background:transparent;
+  color:white;
+  border:1px solid #777;
+}
+.grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
-.step {
-  border-top:3px solid var(--orange);
-  padding:25px 0;
+.card {
+  background:var(--panel);
+  border:1px solid #3a4145;
+  padding:25px;
+  border-radius:12px;
 }
-.step b { color:var(--orange); font-size:38px; }
-.step h3 { font-size:24px; }
-.contact-section { background:#191b1d; }
-.contact-grid {
+.card h3 { color:white; }
+.card p { margin-bottom:0; }
+.light {
+  background:#e9e4dc;
+  color:#1b2023;
+}
+.light p { color:#555; }
+
+/* Interaktiver Vorher-Nachher-Vergleich */
+.compare {
+  position:relative;
+  height:350px;
+  overflow:hidden;
+  border-radius:14px;
+  border:4px solid #3b4246;
+  touch-action:pan-y;
+  cursor:ew-resize;
+}
+.scene {
+  position:absolute;
+  inset:0;
+}
+.before {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 115px,
+      #6b6965 116px 119px
+    ),
+    linear-gradient(120deg,#b1ada4,#898c88);
+}
+.after {
+  background:linear-gradient(120deg,#eeeae2,#ccc9c2);
+}
+.floor {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:23%;
+  background:repeating-linear-gradient(
+    90deg,#8b705b 0 90px,#634c3d 91px 94px
+  );
+  border-top:8px solid #6e6258;
+}
+.after .floor {
+  background:#b6a08c;
+  border-top:8px solid #e8e1d7;
+}
+.tag {
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#171a1de8;
+  padding:7px 12px;
+  border-radius:5px;
+  font-size:12px;
+  font-weight:bold;
+}
+.after .tag { left:auto;right:15px; }
+.after-cover {
+  position:absolute;
+  inset:0;
+  clip-path:inset(0 0 0 50%);
+}
+.divider {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:4px;
+  background:white;
+  pointer-events:none;
+}
+.handle {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:var(--orange);
+  color:#111;
+  border:4px solid white;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  font-weight:bold;
+  pointer-events:none;
+}
+input[type=range] {
+  width:100%;
+  accent-color:var(--orange);
+  cursor:pointer;
+}
+.compare-note {
+  font-size:13px;
+  margin-top:15px;
+}
+
+/* Projekt-Konfigurator */
+.config {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:45px;
+  gap:25px;
 }
-.contact-link {
-  display:block;
-  padding:18px 0;
-  border-bottom:1px solid var(--line);
-  text-decoration:none;
-  overflow-wrap:anywhere;
-}
-.contact-link:hover { color:var(--orange); }
-form {
-  background:#242629;
-  padding:30px;
-  border:1px solid var(--line);
-}
-label { display:block; font-weight:700; margin:14px 0 7px; }
-input,select,textarea {
-  display:block;
+.field { margin-bottom:22px; }
+label { display:block;margin-bottom:8px; }
+select,input[type=text] {
   width:100%;
-  padding:14px;
+  padding:13px;
+  border-radius:7px;
+  border:1px solid #60696e;
+  background:#111416;
   color:white;
-  background:#151617;
-  border:1px solid #555;
-  border-radius:0;
+  font:inherit;
 }
-textarea { min-height:125px; resize:vertical; }
-input:focus,select:focus,textarea:focus {
-  outline:2px solid var(--orange);
-  outline-offset:1px;
-}
-form .btn { margin-top:22px; width:100%; }
-.small { font-size:13px; }
-footer { padding:35px 0; border-top:1px solid var(--line); }
-.footer-row {
+.check {
   display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  gap:15px;
+  align-items:center;
+  gap:10px;
+  margin:10px 0;
 }
-.footer-row a { color:#ccc; }
-.reveal {
-  opacity:0;
-  transform:translateY(25px);
-  transition:opacity .7s,transform .7s;
+.check input { accent-color:var(--orange); }
+.summary {
+  background:#e9e4dc;
+  color:#1b2023;
+  border-radius:12px;
+  padding:28px;
 }
-.reveal.visible { opacity:1; transform:translateY(0); }
-@media(max-width:850px) {
-  .grid { grid-template-columns:repeat(2,1fr); }
-  .about-grid,.contact-grid { grid-template-columns:1fr; }
-  nav { gap:12px; }
+.summary p { color:#4e5659; }
+.summary .line {
+  padding:12px 0;
+  border-bottom:1px solid #bbb4aa;
 }
-@media(max-width:600px) {
-  .nav { align-items:flex-start; flex-direction:column; padding:15px 0; }
+.summary strong { display:block; }
+.small { font-size:13px; }
+.other {
+  border-top:1px solid #343b3f;
+}
+.contact {
+  background:linear-gradient(130deg,#ff8b43,#db5a18);
+  color:#111;
+}
+.contact p { color:#29201c; }
+.contact a { font-weight:bold; }
+footer {
+  padding:35px 20px;
+  text-align:center;
+  color:#b6babb;
+}
+footer a { margin:0 10px; }
+@media(max-width:750px) {
+  .grid,.config { grid-template-columns:1fr; }
+  section { padding:55px 0; }
+  .hero { padding:85px 0; }
+  .compare { height:280px; }
   nav { flex-wrap:wrap; }
-  .hero { min-height:610px; }
-  .hero-content { padding:70px 0; }
-  .grid,.process-grid { grid-template-columns:1fr; }
-  section { padding:70px 0; }
-  .service { min-height:auto; }
-  .about-visual { min-height:270px; }
-  form { padding:20px; }
-  .btn { width:100%; }
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*:before,*:after { scroll-behavior:auto!important; transition:none!important; }
-  .reveal { opacity:1; transform:none; }
+  h1 { letter-spacing:-1px; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="#" class="brand">G<span>&</span>T SAUBERSTARK<span>.</span></a>
-    <nav aria-label="Hauptnavigation">
-      <a href="#leistungen">LEISTUNGEN</a>
-      <a href="#unternehmen">ÜBER UNS</a>
-      <a href="#kontakt">KONTAKT</a>
-    </nav>
-  </div>
+<nav>
+  <a href="#start" class="logo">G&T <span>SAUBERSTARK</span></a>
+  <a href="#projekt" class="btn">Projekt anfragen</a>
+</nav>
 </header>
 
 <main>
-  <div class="hero">
-    <div class="container hero-content">
-      <div class="hero-line"></div>
-      <div class="eyebrow">G&T Sauberstark GbR · Herne & Umgebung</div>
-      <h1>WIR REDEN NICHT NUR.<br><span>WIR PACKEN AN.</span></h1>
-      <p>Renovierung. Reinigung. Entrümpelung. Objektservice. Ein Ansprechpartner für Arbeiten rund um Ihre Immobilie.</p>
-      <div class="actions">
-        <a class="btn" href="#kontakt">PROJEKT ANFRAGEN →</a>
-        <a class="btn outline" href="#leistungen">LEISTUNGEN ENTDECKEN</a>
+<section class="hero" id="start">
+<div class="container">
+  <div class="kicker">Trockenbau · Spachtelarbeiten · Herne</div>
+  <h1>WIR SCHAFFEN<br><span class="orange">NEUE RÄUME.</span></h1>
+  <p>
+    Trockenbau, Spachtelarbeiten und Renovierung.
+    Entdecke interaktiv, wie sich ein Raum verändern kann.
+  </p>
+  <a href="#visualisierung" class="btn">Veränderung erleben</a>
+  <a href="#projekt" class="btn secondary">Projekt planen</a>
+</div>
+</section>
+
+<section id="visualisierung">
+<div class="container">
+  <div class="kicker">Interaktive Visualisierung</div>
+  <h2>ZIEH DEN REGLER.<br>SIEH DIE VERÄNDERUNG.</h2>
+  <p>
+    Bewege den Regler nach links oder rechts.
+    Vergleiche den Rohzustand mit einer fertigen Wandoberfläche.
+  </p>
+
+  <div class="compare" id="compare">
+    <div class="scene before">
+      <div class="floor"></div>
+      <div class="tag">VORHER</div>
+    </div>
+
+    <div class="after-cover" id="afterCover">
+      <div class="scene after">
+        <div class="floor"></div>
+        <div class="tag">NACHHER</div>
       </div>
     </div>
+
+    <div class="divider" id="divider"></div>
+    <div class="handle" id="handle">↔</div>
   </div>
 
-  <div class="strip">
-    <div class="container">
-      <span>01 / HANDWERKLICHE DIENSTLEISTUNGEN</span>
-      <span>02 / OBJEKTSERVICE</span>
-      <span>03 / DIREKTE KOMMUNIKATION</span>
+  <label for="slider">Vorher-Nachher-Vergleich</label>
+  <input id="slider" type="range" min="0" max="100" value="50">
+  <p class="compare-note">
+    Schematische Illustration, kein Foto einer ausgeführten Arbeit.
+  </p>
+</div>
+</section>
+
+<section class="light">
+<div class="container">
+  <div class="kicker">Vom Rohbau zur Oberfläche</div>
+  <h2>DREI SCHRITTE ZUM ERGEBNIS.</h2>
+
+  <div class="grid">
+    <div class="card" style="background:white">
+      <h3 style="color:#222">01 · Konstruktion</h3>
+      <p>Unterkonstruktion für neue Raumaufteilungen.</p>
+    </div>
+    <div class="card" style="background:white">
+      <h3 style="color:#222">02 · Beplankung</h3>
+      <p>Montage geeigneter Trockenbauplatten.</p>
+    </div>
+    <div class="card" style="background:white">
+      <h3 style="color:#222">03 · Oberfläche</h3>
+      <p>Spachteln und Schleifen nach vereinbartem Umfang.</p>
     </div>
   </div>
+</div>
+</section>
 
-  <section id="leistungen">
-    <div class="container">
-      <div class="section-intro reveal">
-        <div class="eyebrow">WAS WIR MACHEN</div>
-        <h2>STARKE LEISTUNGEN.<br>KLARE ERGEBNISSE.</h2>
-        <p>Ob Privatimmobilie, Gewerbeobjekt oder Baustelle: Wir unterstützen bei unterschiedlichen Arbeiten rund um Gebäude und Grundstücke.</p>
+<section id="projekt">
+<div class="container">
+  <div class="kicker">Dein Projekt</div>
+  <h2>STELL DEIN PROJEKT ZUSAMMEN.</h2>
+  <p>
+    Wähle deine gewünschten Arbeiten.
+    Wir erstellen daraus eine unverbindliche Anfrage.
+  </p>
+
+  <div class="config">
+    <div class="card">
+      <div class="field">
+        <label for="area">
+          Geschätzte Fläche:
+          <strong id="areaText">25 m²</strong>
+        </label>
+        <input id="area" type="range"
+               min="5" max="150" step="5" value="25">
       </div>
-      <div class="grid">
-        <article class="service reveal">
-          <div class="number">01 / RENOVIERUNG</div>
-          <h3>Renovierung & Trockenbau</h3>
-          <p>Trockenbauwände, Spachtel- und Schleifarbeiten sowie Renovierungsarbeiten im zulässigen Tätigkeitsumfang.</p>
-        </article>
-        <article class="service reveal">
-          <div class="number">02 / REINIGUNG</div>
-          <h3>Gebäudereinigung</h3>
-          <p>Unterhaltsreinigung, Fenster- und Glasreinigung, Bauzwischen- und Bauendreinigung.</p>
-        </article>
-        <article class="service reveal">
-          <div class="number">03 / RÄUMUNG</div>
-          <h3>Entrümpelung & Transport</h3>
-          <p>Räumung von Wohnungen, Kellern, Garagen und Gewerberäumen. Transport und Entsorgung nach Vereinbarung.</p>
-        </article>
-        <article class="service reveal">
-          <div class="number">04 / AUSSENFLÄCHEN</div>
-          <h3>Hochdruckreinigung</h3>
-          <p>Reinigung geeigneter Terrassen, Einfahrten, Wege und weiterer Außenflächen.</p>
-        </article>
-        <article class="service reveal">
-          <div class="number">05 / GRUNDSTÜCK</div>
-          <h3>Gartenpflege</h3>
-          <p>Rasenmähen, Heckenschnitt, Unkrautentfernung und regelmäßige Pflege von Außenanlagen.</p>
-        </article>
-        <article class="service reveal">
-          <div class="number">06 / IMMOBILIEN</div>
-          <h3>Hausmeisterservice</h3>
-          <p>Objektbetreuung, Kontrollgänge und unterstützende Hausmeistertätigkeiten.</p>
-        </article>
+
+      <div class="field">
+        <strong>Welche Arbeiten brauchst du?</strong>
+        <label class="check">
+          <input type="checkbox" id="wall" checked>
+          Trockenbauwand
+        </label>
+        <label class="check">
+          <input type="checkbox" id="boards">
+          Beplankung
+        </label>
+        <label class="check">
+          <input type="checkbox" id="putty" checked>
+          Spachtelarbeiten
+        </label>
+        <label class="check">
+          <input type="checkbox" id="sanding">
+          Schleifarbeiten
+        </label>
       </div>
-    </div>
-  </section>
 
-  <section id="unternehmen" class="about">
-    <div class="container about-grid">
-      <div class="about-visual reveal" role="img" aria-label="Symbolbild eines Handwerkers bei der Arbeit"></div>
-      <div class="reveal">
-        <div class="eyebrow">DAS UNTERNEHMEN</div>
-        <h2>KEINE GROSSEN SPRÜCHE.<br>SONDERN ARBEIT.</h2>
-        <p>G&T Sauberstark ist eine GbR aus Herne. Wir unterstützen Privatkunden, Hausverwaltungen und Unternehmen bei Reinigungs-, Renovierungs- und Objektdienstleistungen.</p>
-        <div class="feature">
-          <strong>Direkte Ansprechpartner</strong>
-          <p>Klare Kommunikation von der Anfrage bis zur Ausführung.</p>
-        </div>
-        <div class="feature">
-          <strong>Individuelle Angebote</strong>
-          <p>Leistungen und Kosten werden passend zum Projekt abgestimmt.</p>
-        </div>
-        <div class="feature">
-          <strong>Vielseitige Unterstützung</strong>
-          <p>Mehrere Dienstleistungen rund um Ihre Immobilie.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="eyebrow">SO FUNKTIONIERT ES</div>
-      <h2>IN DREI SCHRITTEN ZUM PROJEKT.</h2>
-      <div class="process-grid">
-        <div class="step reveal">
-          <b>01</b>
-          <h3>ANFRAGEN</h3>
-          <p>Beschreiben Sie Ihr Vorhaben und senden Sie uns bei Bedarf Fotos.</p>
-        </div>
-        <div class="step reveal">
-          <b>02</b>
-          <h3>ABSTIMMEN</h3>
-          <p>Wir besprechen Umfang, Voraussetzungen, Termin und Kosten.</p>
-        </div>
-        <div class="step reveal">
-          <b>03</b>
-          <h3>UMSETZEN</h3>
-          <p>Nach Vereinbarung übernehmen wir die beauftragten Arbeiten.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt" class="contact-section">
-    <div class="container contact-grid">
-      <div class="reveal">
-        <div class="eyebrow">KONTAKT</div>
-        <h2>IHR PROJEKT.<br>UNSER EINSATZ.</h2>
-        <p>Sie haben eine konkrete Aufgabe? Schildern Sie uns Ihr Vorhaben. Wir besprechen die nächsten Schritte.</p>
-        <a class="contact-link" href="tel:+4917664951829">☎ 0176 64951829</a>
-        <a class="contact-link" href="mailto:Hochdruckreinigung44@gmail.com">✉ Hochdruckreinigung44@gmail.com</a>
-        <a class="contact-link" href="https://wa.me/4917664951829" target="_blank" rel="noopener noreferrer">↗ WhatsApp öffnen</a>
-        <p>Standort: Herne, Nordrhein-Westfalen</p>
-      </div>
-      <form id="anfrage" class="reveal">
-        <h3>PROJEKTANFRAGE</h3>
-        <p class="small">Die Anfrage wird über Ihr E-Mail-Programm vorbereitet. Es werden keine Formulardaten auf dieser Website gespeichert.</p>
-
-        <label for="name">Ihr Name</label>
-        <input id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Vor- und Nachname">
-
-        <label for="leistung">Gewünschte Leistung</label>
-        <select id="leistung" name="leistung" required>
-          <option value="">Bitte auswählen</option>
-          <option>Renovierung & Trockenbau</option>
-          <option>Gebäudereinigung</option>
-          <option>Entrümpelung & Transport</option>
-          <option>Hochdruckreinigung</option>
-          <option>Gartenpflege</option>
-          <option>Hausmeisterservice</option>
-          <option>Sonstiges</option>
+      <div class="field">
+        <label for="quality">Oberflächenqualität</label>
+        <select id="quality">
+          <option value="Noch unklar">Noch unklar</option>
+          <option value="Q1">Q1</option>
+          <option value="Q2">Q2</option>
+          <option value="Q3">Q3</option>
+          <option value="Q4">Q4</option>
         </select>
+      </div>
 
-        <label for="ort">Projektort</label>
-        <input id="ort" name="ort" required maxlength="100" placeholder="z. B. Herne">
-
-        <label for="nachricht">Projektbeschreibung</label>
-        <textarea id="nachricht" name="nachricht" required maxlength="3000" placeholder="Was soll gemacht werden? Ungefähre Fläche, Terminwunsch usw."></textarea>
-
-        <button type="submit" class="btn">ANFRAGE PER E-MAIL VORBEREITEN →</button>
-      </form>
+      <div class="field">
+        <label for="city">Projektort</label>
+        <input id="city" type="text"
+               maxlength="80"
+               placeholder="z. B. Herne">
+      </div>
     </div>
-  </section>
+
+    <div class="summary">
+      <h3>Deine Projektübersicht</h3>
+      <div class="line">
+        Fläche
+        <strong id="resultArea">25 m²</strong>
+      </div>
+      <div class="line">
+        Gewünschte Arbeiten
+        <strong id="resultWorks">Trockenbauwand, Spachtelarbeiten</strong>
+      </div>
+      <div class="line">
+        Oberflächenqualität
+        <strong id="resultQuality">Noch unklar</strong>
+      </div>
+      <div class="line">
+        Projektort
+        <strong id="resultCity">Nicht angegeben</strong>
+      </div>
+
+      <p class="small">
+        Kein verbindliches Angebot und keine automatische
+        Preisberechnung. Die Ausführung und Kosten
+        hängen von den tatsächlichen Bedingungen ab.
+      </p>
+
+      <button class="btn" id="send" type="button">
+        Anfrage per E-Mail vorbereiten
+      </button>
+
+      <p class="small">
+        Öffnet dein E-Mail-Programm.
+        Die Nachricht wird nicht automatisch versendet.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="leistungen">
+<div class="container">
+  <div class="kicker">Unser Schwerpunkt</div>
+  <h2>TROCKENBAU & SPACHTELARBEITEN.</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Trockenbau</h3>
+      <p>Neue Trennwände und Raumaufteilungen.</p>
+    </div>
+    <div class="card">
+      <h3>Spachtelarbeiten</h3>
+      <p>Oberflächenqualitäten Q1 bis Q4 nach Vereinbarung.</p>
+    </div>
+    <div class="card">
+      <h3>Schleifarbeiten</h3>
+      <p>Vorbereitung von Wandflächen für Folgearbeiten.</p>
+    </div>
+  </div>
+
+  <p class="small">
+    Leistungen nur im Rahmen der gewerbe- und
+    handwerksrechtlich zulässigen Tätigkeiten.
+  </p>
+</div>
+</section>
+
+<section class="other">
+<div class="container">
+  <div class="kicker">Weitere Dienstleistungen</div>
+  <h2>MEHR ALS TROCKENBAU.</h2>
+  <p>
+    Neben unserem Schwerpunkt unterstützen wir
+    Privatkunden und Unternehmen bei weiteren Arbeiten.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Entrümpelung</h3>
+      <p>Wohnungen, Keller, Garagen und Räumungen.</p>
+    </div>
+    <div class="card">
+      <h3>Gebäudereinigung</h3>
+      <p>Unterhaltsreinigung, Glasreinigung und Bauendreinigung.</p>
+    </div>
+    <div class="card">
+      <h3>Hochdruckreinigung</h3>
+      <p>Terrassen, Einfahrten und geeignete Außenflächen.</p>
+    </div>
+    <div class="card">
+      <h3>Gartenpflege</h3>
+      <p>Rasenmähen, Heckenschnitt und Unkrautentfernung.</p>
+    </div>
+    <div class="card">
+      <h3>Hausmeisterservice</h3>
+      <p>Objektbetreuung und kleinere Hilfsarbeiten.</p>
+    </div>
+    <div class="card">
+      <h3>Montagehilfe</h3>
+      <p>Unterstützung bei zulässigen Montagearbeiten.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="contact" id="kontakt">
+<div class="container">
+  <div class="kicker" style="color:#222">G&T Sauberstark GbR</div>
+  <h2>DU PLANST EIN PROJEKT?<br>KONTAKTIERE UNS.</h2>
+  <p>Herne und Umgebung</p>
+  <p>
+    Telefon:
+    <a href="tel:+4917664951829">0176 64951829</a>
+  </p>
+  <p>
+    E-Mail:
+    <a href="mailto:Hochdruckreinigung44@gmail.com">
+      Hochdruckreinigung44@gmail.com
+    </a>
+  </p>
+  <a class="btn secondary" href="#projekt">
+    Projekt konfigurieren
+  </a>
+</div>
+</section>
 </main>
 
 <footer>
-  <div class="container footer-row">
-    <div><strong>G&T SAUBERSTARK GbR</strong><p>Herne · Nordrhein-Westfalen</p></div>
-    <div>
-      <a href="mailto:Hochdruckreinigung44@gmail.com">E-Mail</a> ·
-      <a href="tel:+4917664951829">Telefon</a>
-      <p>© <span id="jahr">2026</span> G&T Sauberstark</p>
-    </div>
-  </div>
+  <p>© <span id="year"></span> G&T Sauberstark GbR · Herne</p>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
 </footer>
 
 <script>
-document.getElementById("jahr").textContent = new Date().getFullYear();
+const slider = document.getElementById("slider");
+const cover = document.getElementById("afterCover");
+const divider = document.getElementById("divider");
+const handle = document.getElementById("handle");
+const compare = document.getElementById("compare");
 
-document.getElementById("anfrage").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const leistung = document.getElementById("leistung").value;
-  const ort = document.getElementById("ort").value.trim();
-  const nachricht = document.getElementById("nachricht").value.trim();
+function moveSlider(value) {
+  value = Math.max(0, Math.min(100, Number(value)));
+  cover.style.clipPath = `inset(0 0 0 ${value}%)`;
+  divider.style.left = value + "%";
+  handle.style.left = value + "%";
+  slider.value = value;
+}
 
-  const subject = "Projektanfrage: " + leistung;
-  const body = "Name: " + name +
-    "\nLeistung: " + leistung +
-    "\nProjektort: " + ort +
-    "\n\nProjektbeschreibung:\n" + nachricht;
+slider.addEventListener("input", function() {
+  moveSlider(this.value);
+});
+
+let dragging = false;
+
+function moveFromPointer(event) {
+  const rect = compare.getBoundingClientRect();
+  const percent = (event.clientX - rect.left) / rect.width * 100;
+  moveSlider(percent);
+}
+
+compare.addEventListener("pointerdown", event => {
+  dragging = true;
+  compare.setPointerCapture(event.pointerId);
+  moveFromPointer(event);
+});
+
+compare.addEventListener("pointermove", event => {
+  if (dragging) moveFromPointer(event);
+});
+
+compare.addEventListener("pointerup", () => dragging = false);
+compare.addEventListener("pointercancel", () => dragging = false);
+
+moveSlider(50);
+
+const area = document.getElementById("area");
+const quality = document.getElementById("quality");
+const city = document.getElementById("city");
+
+const choices = [
+  ["wall", "Trockenbauwand"],
+  ["boards", "Beplankung"],
+  ["putty", "Spachtelarbeiten"],
+  ["sanding", "Schleifarbeiten"]
+];
+
+function selectedWorks() {
+  return choices
+    .filter(([id]) => document.getElementById(id).checked)
+    .map(([,name]) => name);
+}
+
+function updateProject() {
+  const size = area.value + " m²";
+  document.getElementById("areaText").textContent = size;
+  document.getElementById("resultArea").textContent = size;
+  document.getElementById("resultWorks").textContent =
+    selectedWorks().join(", ") || "Keine Auswahl";
+  document.getElementById("resultQuality").textContent = quality.value;
+  document.getElementById("resultCity").textContent =
+    city.value.trim() || "Nicht angegeben";
+}
+
+document.querySelectorAll("#projekt input, #projekt select")
+  .forEach(el => {
+    el.addEventListener("input", updateProject);
+    el.addEventListener("change", updateProject);
+  });
+
+document.getElementById("send").addEventListener("click", () => {
+  const works = selectedWorks();
+
+  if (!works.length) {
+    alert("Bitte wähle mindestens eine Arbeit aus.");
+    return;
+  }
+
+  const subject = "Unverbindliche Projektanfrage G&T Sauberstark";
+  const body = [
+    "Guten Tag,",
+    "",
+    "ich möchte folgendes Projekt anfragen:",
+    "",
+    "Fläche: " + area.value + " m²",
+    "Arbeiten: " + works.join(", "),
+    "Oberflächenqualität: " + quality.value,
+    "Projektort: " + (city.value.trim() || "Noch offen"),
+    "",
+    "Weitere Informationen:",
+    "",
+    "Meine Kontaktdaten:",
+    "",
+    "Mit freundlichen Grüßen"
+  ].join("\n");
 
   window.location.href =
     "mailto:Hochdruckreinigung44@gmail.com?subject=" +
     encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
+    "&body=" +
+    encodeURIComponent(body);
 });
 
-if ("IntersectionObserver" in window &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.08});
-  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-} else {
-  document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
-}
-</script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-<div style="text-align:center; padding:25px; background:#101112;">
-  <a href="impressum.html" style="color:#ff671f;">Impressum</a>
-  &nbsp; | &nbsp;
-  <a href="datenschutz.html" style="color:#ff671f;">Datenschutz</a>
-</div>
+updateProject();
+</script>
 </body>
 </html>
