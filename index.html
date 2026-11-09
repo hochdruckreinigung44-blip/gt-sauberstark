@@ -3,309 +3,298 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#111719">
-<meta name="description" content="G&T Sauberstark GbR – Trockenbau, Spachtelarbeiten, Reinigung, Entrümpelung und weitere Dienstleistungen in Herne.">
-<title>G&T Sauberstark | Trockenbau & Dienstleistungen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e1619">
+
+<title>G&T Sauberstark GbR | Dienstleistungen</title>
 
 <style>
-:root {
-  --orange: #ff832e;
-  --bg: #111719;
-  --panel: #1c2529;
-  --line: #435158;
-  --muted: #c0cacd;
+:root{
+  --bg:#0e1619;
+  --panel:#1b272c;
+  --orange:#ff812b;
+  --border:#405158;
+  --muted:#bdc6ca;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: white;
-  font: 16px/1.6 Arial, sans-serif;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
 }
-a { color: inherit; }
-button, input, select, textarea { font: inherit; }
-button { cursor: pointer; }
-.wrap { max-width: 1100px; margin: auto; }
-section { padding: 70px 6%; }
-h1, h2, h3 { line-height: 1.15; }
-h1 { font-size: clamp(40px, 8vw, 80px); }
-h2 { font-size: clamp(30px, 5vw, 46px); }
-p { color: var(--muted); }
-.orange { color: var(--orange); }
-.kicker {
-  color: var(--orange);
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto}
+section{padding:65px 6%}
+h1,h2,h3{line-height:1.2}
+h1{font-size:clamp(30px,5vw,48px)}
+h2{font-size:clamp(27px,4vw,39px)}
+p{color:var(--muted)}
+.kicker{
+  color:var(--orange);
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
-header {
-  padding: 20px 6%;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
+.btn{
+  background:var(--orange);
+  color:#151515;
+  border:0;
+  border-radius:8px;
+  padding:14px 20px;
+  font-weight:800;
+  cursor:pointer;
 }
-.logo { font-size: 20px; font-weight: 900; }
-nav { display: flex; flex-wrap: wrap; gap: 16px; }
-nav a { text-decoration: none; font-size: 14px; }
-.hero {
-  background: radial-gradient(
-    circle at 85% 20%,
-    #60351e,
-    transparent 50%
-  ), var(--bg);
-  padding: 100px 6%;
-}
-.hero p { max-width: 600px; font-size: 18px; }
-.btn {
-  display: inline-block;
-  background: var(--orange);
-  color: #151515;
-  padding: 13px 20px;
-  border: none;
-  border-radius: 9px;
-  font-weight: bold;
-  text-decoration: none;
-}
-.panel {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  padding: 24px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.alt { background: #182125; }
+.btn:hover{background:#ffa05a}
 
-/* INTERAKTIVER WANDVERGLEICH */
+/* KOPFBEREICH MIT LOGO */
 
-.compare {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1000 / 560;
-  min-height: 260px;
-  max-height: 600px;
-  border: 2px solid #718087;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #999087;
-  cursor: ew-resize;
-  touch-action: none;
-  user-select: none;
-  -webkit-user-select: none;
+header{
+  background:#0b1316;
+  border-bottom:2px solid var(--orange);
 }
-.scene {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:20px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
-.scene svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
-.after-scene {
-  clip-path: inset(0 50% 0 0);
+.brand img{
+  width:125px;
+  height:125px;
+  object-fit:contain;
+  border-radius:12px;
 }
-.divider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background: white;
-  transform: translateX(-50%);
-  z-index: 4;
-  pointer-events: none;
+.brand-name{
+  font-size:clamp(20px,3vw,29px);
+  font-weight:900;
+  line-height:1.15;
 }
-.handle {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 64px;
-  height: 64px;
-  border: 4px solid white;
-  border-radius: 50%;
-  background: var(--orange);
-  color: #151515;
-  display: grid;
-  place-items: center;
-  font-size: 27px;
-  font-weight: 900;
-  z-index: 5;
-  pointer-events: none;
-  box-shadow: 0 5px 20px #0008;
+.brand-name span{color:var(--orange)}
+.brand-name small{
+  display:block;
+  color:#d7dfe1;
+  font-size:14px;
+  letter-spacing:3px;
+  margin-top:6px;
 }
-.tag {
-  position: absolute;
-  top: 16px;
-  z-index: 3;
-  background: #101619dc;
-  color: white;
-  padding: 7px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: bold;
-  pointer-events: none;
+nav{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
 }
-.tag.left { left: 15px; }
-.tag.right { right: 15px; }
-
-.compare-controls { margin-top: 20px; }
-.compare-controls input {
-  width: 100%;
-  accent-color: var(--orange);
-  cursor: pointer;
+nav a{
+  font-weight:bold;
+  text-decoration:none;
+  font-size:15px;
 }
-.compare-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
-}
-.compare-buttons button {
-  padding: 11px 16px;
-  border-radius: 7px;
-  background: #293137;
-  color: white;
-  border: 1px solid #626b70;
-}
+nav a:hover{color:var(--orange)}
 
 /* DIENSTLEISTUNGEN */
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+.intro{margin-bottom:30px}
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
-.service-card {
-  width: 100%;
-  min-height: 175px;
-  text-align: left;
-  color: white;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 24px;
-  transition: .2s;
+.service{
+  width:100%;
+  min-height:185px;
+  text-align:left;
+  padding:25px;
+  background:var(--panel);
+  color:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  transition:.2s;
 }
-.service-card h3 { color: var(--orange); }
-.service-card:hover,
-.service-card:focus-visible,
-.service-card[aria-pressed="true"] {
-  border-color: var(--orange);
-  transform: translateY(-2px);
+.service:hover,
+.service:focus-visible,
+.service[aria-pressed=true]{
+  border-color:var(--orange);
+  transform:translateY(-3px);
+  outline:none;
 }
-.service-card span {
-  font-size: 13px;
-  font-weight: bold;
+.service .symbol{
+  font-size:29px;
+  margin-bottom:10px;
+}
+.service h3{
+  font-size:19px;
+  margin:8px 0;
+}
+.service p{
+  font-size:14px;
+  margin:8px 0;
+}
+.service .link{
+  display:block;
+  color:var(--orange);
+  font-size:13px;
+  margin-top:15px;
+  font-weight:bold;
 }
 
-/* ANFRAGEFORMULAR */
+/* ANFRAGE */
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 22px;
-  align-items: start;
+.request-section{
+  background:#131e22;
+  border-top:1px solid var(--border);
 }
-label {
-  display: block;
-  font-weight: bold;
-  font-size: 14px;
-  margin: 15px 0 7px;
+.form-layout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:start;
+  gap:24px;
 }
-.field {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #66767c;
-  border-radius: 8px;
-  background: #101719;
-  color: white;
+.panel{
+  padding:26px;
+  border-radius:14px;
+  background:var(--panel);
+  border:1px solid var(--border);
 }
-.field:focus {
-  outline: 2px solid var(--orange);
+label{
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  margin:16px 0 7px;
 }
-.two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+input,select,textarea{
+  width:100%;
+  background:#111b1f;
+  border:1px solid #61747c;
+  color:white;
+  padding:12px;
+  border-radius:7px;
 }
-.checks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 15px 0;
+input:focus,
+select:focus,
+textarea:focus{
+  outline:2px solid var(--orange);
 }
-.check {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin: 4px 0;
-  font-weight: normal;
+textarea{
+  min-height:115px;
+  resize:vertical;
 }
-.check input {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--orange);
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
 }
-.summary {
-  background: #ebe7df;
-  color: #20262a;
+.checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin:15px 0;
 }
-.summary p { color: #556066; }
-.summary-row {
-  border-bottom: 1px solid #c7c6bf;
-  padding: 12px 0;
+.check{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:normal;
+  margin:0;
 }
-.summary-row span {
-  display: block;
-  color: #546068;
-  font-size: 13px;
+.check input{
+  width:18px;
+  height:18px;
+  accent-color:var(--orange);
 }
-.summary-row strong {
-  display: block;
-  overflow-wrap: anywhere;
+.summary{
+  background:#eae6de;
+  color:#172026;
 }
-.summary .btn {
-  width: 100%;
-  margin-top: 20px;
+.summary h3{
+  margin-top:0;
+  padding-bottom:15px;
+  border-bottom:2px solid var(--orange);
 }
-[hidden] { display: none !important; }
-.contact {
-  background: var(--orange);
-  color: #151515;
+.summary-row{
+  padding:13px 0;
+  border-bottom:1px solid #c5c8c5;
 }
-.contact p { color: #292929; }
-footer {
-  text-align: center;
-  padding: 35px;
-  border-top: 1px solid var(--line);
+.summary-row span{
+  display:block;
+  font-size:12px;
+  color:#526066;
 }
-footer a { margin: 0 12px; }
+.summary-row strong{
+  display:block;
+  font-size:15px;
+  overflow-wrap:anywhere;
+}
+.summary .btn{
+  width:100%;
+  margin-top:22px;
+}
+.summary p{
+  font-size:12px;
+  color:#5d6568;
+}
+[hidden]{display:none!important}
 
-@media(max-width: 800px) {
-  .grid, .services {
-    grid-template-columns: repeat(2, 1fr);
+/* KONTAKT */
+
+.contact{
+  padding:55px 6%;
+  background:#18262b;
+  text-align:center;
+}
+.contact a{
+  display:inline-block;
+  color:var(--orange);
+  font-weight:bold;
+  text-decoration:none;
+  margin:7px;
+}
+footer{
+  border-top:1px solid var(--border);
+  padding:27px;
+  text-align:center;
+  font-size:13px;
+}
+footer a{
+  margin:0 12px;
+  text-decoration:none;
+}
+footer a:hover{color:var(--orange)}
+
+@media(max-width:850px){
+  .services{grid-template-columns:repeat(2,1fr)}
+  .form-layout{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .header-inner{
+    flex-direction:column;
+    text-align:center;
   }
-  .form-grid { grid-template-columns: 1fr; }
-}
-@media(max-width: 570px) {
-  section { padding: 55px 5%; }
-  .hero { padding: 75px 5%; }
-  .grid, .services, .two, .checks {
-    grid-template-columns: 1fr;
+  .brand{
+    flex-direction:column;
+    gap:10px;
   }
-  .compare { aspect-ratio: 4 / 3; }
-  .handle { width: 56px; height: 56px; }
+  .brand img{
+    width:110px;
+    height:110px;
+  }
+  nav{justify-content:center}
+  section{padding:50px 5%}
+  .services,.two,.checks{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -313,435 +302,269 @@ footer a { margin: 0 12px; }
 <body>
 
 <header>
-  <div class="logo">
-    G&T <span class="orange">SAUBERSTARK</span>
+  <div class="header-inner">
+
+    <div class="brand">
+      <img src="logo-header.png"
+           alt="G&T Sauberstark Logo">
+      <div class="brand-name">
+        G&T<br>
+        <span>SAUBERSTARK</span>
+        <small>GbR</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#leistungen">Dienstleistungen</a>
+      <a href="#anfrage">Anfrage</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
   </div>
-  <nav>
-    <a href="#visual">Visualisierung</a>
-    <a href="#leistungen">Leistungen</a>
-    <a href="#anfrage">Anfrage</a>
-  </nav>
 </header>
 
 <main>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="kicker">
-      Herne & Umgebung · Renovierung · Reinigung
-    </div>
-    <h1>
-      RÄUME NEU<br>
-      <span class="orange">GESTALTEN.</span>
-    </h1>
-    <p>
-      Trockenbau, Spachtelarbeiten und Dienstleistungen
-      rund um Ihre Immobilie.
-    </p>
-    <a href="#visual" class="btn">
-      Vorher / Nachher entdecken
-    </a>
-  </div>
-</section>
-
-<section id="visual">
+<section id="leistungen">
   <div class="wrap">
 
-    <div class="kicker">Interaktive Wandvisualisierung</div>
+    <div class="intro">
+      <div class="kicker">G&T Sauberstark GbR</div>
 
-    <h2>
-      VON BESCHÄDIGT ZU<br>
-      <span class="orange">GLATT GESPACHTELT.</span>
-    </h2>
+      <h1>UNSERE DIENSTLEISTUNGEN</h1>
 
-    <p>
-      Ziehe den orangefarbenen Kreis nach links oder rechts.
-      Sieh dir an, wie aus einer beschädigten Wand
-      eine glatt gespachtelte Oberfläche wird.
-    </p>
-
-    <div class="compare" id="compare">
-
-      <!-- VORHER: BESCHÄDIGTE WAND -->
-
-      <div class="scene" aria-hidden="true">
-        <svg viewBox="0 0 1000 560"
-             preserveAspectRatio="xMidYMid slice">
-
-          <defs>
-            <linearGradient id="raw" x2="1" y2="0">
-              <stop stop-color="#8d8982"/>
-              <stop offset=".5" stop-color="#b0a99f"/>
-              <stop offset="1" stop-color="#858077"/>
-            </linearGradient>
-
-            <radialGradient id="hole">
-              <stop stop-color="#292621"/>
-              <stop offset=".6" stop-color="#51463e"/>
-              <stop offset=".85" stop-color="#817367"/>
-              <stop offset="1" stop-color="#b9ae9f"/>
-            </radialGradient>
-
-            <filter id="texture">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency=".06"
-                numOctaves="3"
-                seed="8"/>
-              <feColorMatrix
-                type="saturate"
-                values="0"/>
-              <feComponentTransfer>
-                <feFuncA type="linear" slope=".22"/>
-              </feComponentTransfer>
-            </filter>
-
-            <filter id="shadow">
-              <feDropShadow
-                dx="5"
-                dy="7"
-                stdDeviation="7"
-                flood-opacity=".5"/>
-            </filter>
-          </defs>
-
-          <!-- ALTE WAND -->
-
-          <rect width="1000" height="460" fill="url(#raw)"/>
-          <rect width="1000" height="460" filter="url(#texture)"/>
-
-          <!-- PUTZSCHÄDEN -->
-
-          <path
-            d="M130 145 L166 112 L221 125 L250 105
-               L304 143 L292 199 L315 243 L260 277
-               L193 263 L143 281 L103 233 Z"
-            fill="url(#hole)"
-            stroke="#918579"
-            stroke-width="14"
-            filter="url(#shadow)"/>
-
-          <path
-            d="M600 295 L647 266 L689 278 L736 251
-               L790 298 L773 347 L803 385 L752 410
-               L694 391 L643 408 L604 367 Z"
-            fill="url(#hole)"
-            stroke="#9b8d80"
-            stroke-width="13"
-            filter="url(#shadow)"/>
-
-          <path
-            d="M760 95 L801 78 L843 95 L861 132
-               L833 161 L777 151 L743 125 Z"
-            fill="url(#hole)"
-            stroke="#918477"
-            stroke-width="10"
-            filter="url(#shadow)"/>
-
-          <!-- RISSE -->
-
-          <g fill="none"
-             stroke="#575149"
-             stroke-width="4"
-             stroke-linecap="round">
-            <path d="M292 197 L360 213 L401 200 L447 235 L503 249"/>
-            <path d="M401 200 L420 174 L464 158"/>
-            <path d="M603 344 L558 360 L512 348 L471 390"/>
-            <path d="M160 284 L139 321 L157 358 L119 402"/>
-            <path d="M840 150 L865 187 L849 212 L885 249"/>
-          </g>
-
-          <!-- ABGEBLÄTTERTER PUTZ -->
-
-          <g fill="#c7bcb0" opacity=".75">
-            <path d="M355 91 L411 76 L446 105 L418 138 L360 135 Z"/>
-            <path d="M480 302 L532 284 L555 320 L515 347 L472 332 Z"/>
-            <path d="M85 75 L125 65 L151 86 L128 108 L94 103 Z"/>
-          </g>
-
-          <!-- BODEN -->
-
-          <rect y="460" width="1000" height="100"
-                fill="#8b7463"/>
-          <path d="M0 461 H1000"
-                stroke="#5d5147" stroke-width="9"/>
-          <path d="M0 510 H1000 M200 460 L185 560
-                   M550 460 L575 560 M820 460 L850 560"
-                stroke="#594838"
-                stroke-width="3"
-                opacity=".5"/>
-        </svg>
-      </div>
-
-      <!-- NACHHER: GLATT GESPACHTELTE WAND -->
-
-      <div class="scene after-scene" id="afterScene"
-           aria-hidden="true">
-
-        <svg viewBox="0 0 1000 560"
-             preserveAspectRatio="xMidYMid slice">
-
-          <defs>
-            <linearGradient id="smoothWall" x2="1" y2="0">
-              <stop stop-color="#f0eee9"/>
-              <stop offset=".55" stop-color="#e5e2db"/>
-              <stop offset="1" stop-color="#d8d4cc"/>
-            </linearGradient>
-
-            <filter id="fineTexture">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency=".15"
-                numOctaves="2"
-                seed="4"/>
-              <feColorMatrix
-                type="saturate"
-                values="0"/>
-              <feComponentTransfer>
-                <feFuncA type="linear" slope=".065"/>
-              </feComponentTransfer>
-            </filter>
-          </defs>
-
-          <!-- FERTIGE WAND -->
-
-          <rect width="1000" height="460"
-                fill="url(#smoothWall)"/>
-
-          <rect width="1000" height="460"
-                filter="url(#fineTexture)"/>
-
-          <!-- DEZENTE SPACHTELSTRUKTUR -->
-
-          <g fill="none"
-             stroke="#ffffff"
-             stroke-width="17"
-             opacity=".16">
-            <path d="M100 140 Q350 120 700 145"/>
-            <path d="M190 280 Q510 260 850 295"/>
-            <path d="M80 375 Q390 360 900 390"/>
-          </g>
-
-          <!-- SAUBERE SOCKELLEISTE -->
-
-          <rect y="452" width="1000" height="15"
-                fill="#faf9f5"/>
-          <path d="M0 467 H1000"
-                stroke="#c8c5bd"
-                stroke-width="3"/>
-
-          <!-- BODEN -->
-
-          <rect y="470" width="1000" height="90"
-                fill="#c2ac94"/>
-          <path d="M0 520 H1000 M250 470 L240 560
-                   M600 470 L625 560 M860 470 L880 560"
-                stroke="#8c7967"
-                stroke-width="2"
-                opacity=".35"/>
-        </svg>
-      </div>
-
-      <span class="tag left">VORHER</span>
-      <span class="tag right">NACHHER</span>
-
-      <div class="divider" id="divider"></div>
-      <div class="handle" id="handle">↔</div>
-
+      <p>
+        Trockenbau, Reinigung, Entrümpelung und weitere
+        Dienstleistungen in Herne und Umgebung.
+        Wählen Sie Ihre gewünschte Leistung.
+      </p>
     </div>
-
-    <div class="compare-controls">
-      <label for="compareRange">
-        Wandvergleich:
-        <strong id="comparePercent">50 % fertig</strong>
-      </label>
-
-      <input type="range"
-             id="compareRange"
-             min="0"
-             max="100"
-             value="50"
-             aria-label="Vorher-Nachher-Vergleich">
-
-      <div class="compare-buttons">
-        <button type="button" data-position="0">Vorher</button>
-        <button type="button" data-position="50">Vergleichen</button>
-        <button type="button" data-position="100">Nachher</button>
-      </div>
-    </div>
-
-    <p style="font-size:13px">
-      Illustrative Darstellung einer Wandrenovierung.
-      Keine echte Fotodokumentation.
-    </p>
-
-  </div>
-</section>
-
-<section id="leistungen" class="alt">
-  <div class="wrap">
-
-    <div class="kicker">Unsere Dienstleistungen</div>
-    <h2>WAS KÖNNEN WIR FÜR SIE TUN?</h2>
-    <p>
-      Wählen Sie eine Dienstleistung.
-      Das passende Anfrageformular öffnet sich automatisch.
-    </p>
 
     <div class="services">
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="trockenbau">
+        <div class="symbol">🧱</div>
         <h3>Trockenbau & Spachteln</h3>
-        <p>Trennwände, Beplankung, Spachtel- und Schleifarbeiten.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Trennwände, Beplankung,
+          Spachtelarbeiten Q1–Q4 und Schleifen.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="reinigung">
+        <div class="symbol">✨</div>
         <h3>Gebäudereinigung</h3>
-        <p>Unterhalts-, Glas-, Grund- und Bauendreinigung.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Unterhaltsreinigung, Grundreinigung,
+          Fenster- und Bauendreinigung.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="entruempelung">
+        <div class="symbol">🚚</div>
         <h3>Entrümpelung</h3>
-        <p>Wohnungen, Keller, Garagen und Entsorgung.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Wohnungen, Keller, Garagen,
+          Abtransport und Entsorgung.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="hochdruck">
+        <div class="symbol">💦</div>
         <h3>Hochdruckreinigung</h3>
-        <p>Terrassen, Einfahrten, Pflaster und Außenflächen.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Terrassen, Einfahrten,
+          Pflastersteine und Außenflächen.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="garten">
+        <div class="symbol">🌿</div>
         <h3>Gartenpflege</h3>
-        <p>Rasenmähen, Heckenschnitt und Unkrautentfernung.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Rasenmähen, Heckenschnitt,
+          Unkrautentfernung und Gartenpflege.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="hausmeister">
+        <div class="symbol">🏠</div>
         <h3>Hausmeisterhilfe</h3>
-        <p>Objektbetreuung, Außenanlagen und Hilfsarbeiten.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Objektbetreuung, Außenanlagenpflege
+          und kleinere Hilfsarbeiten.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
-      <button class="service-card"
+      <button class="service"
               type="button"
               data-service="montage">
+        <div class="symbol">🛠️</div>
         <h3>Montagehilfe</h3>
-        <p>Möbelmontage, Demontage und Montageunterstützung.</p>
-        <span>Projekt anfragen →</span>
+        <p>
+          Möbelmontage, Demontage,
+          Küchenmontagehilfe und Unterstützung.
+        </p>
+        <span class="link">Jetzt anfragen →</span>
       </button>
 
     </div>
+
   </div>
 </section>
 
-<section id="anfrage">
+<section id="anfrage" class="request-section">
   <div class="wrap">
 
-    <div class="kicker">Unverbindliche Projektanfrage</div>
-    <h2>PROJEKT PLANEN.</h2>
+    <div class="kicker">Projektanfrage</div>
+    <h2>UNVERBINDLICHE ANFRAGE</h2>
 
-    <div class="form-grid">
+    <p>
+      Teilen Sie uns die wichtigsten Angaben zu Ihrem Projekt mit.
+      Wir prüfen Ihre Anfrage und erstellen ein individuelles Angebot.
+    </p>
+
+    <div class="form-layout">
 
       <form id="requestForm" class="panel">
 
-        <h3 id="formTitle">Trockenbau & Spachteln</h3>
+        <h3 id="formTitle">
+          Trockenbau & Spachteln
+        </h3>
 
-        <label for="serviceSelect">Dienstleistung</label>
-        <select id="serviceSelect" class="field"></select>
+        <label for="serviceSelect">
+          Dienstleistung *
+        </label>
+        <select id="serviceSelect"></select>
 
         <div class="two">
+
           <div>
             <label for="area">Fläche in m²</label>
-            <input class="field"
+            <input type="number"
                    id="area"
-                   type="number"
                    min="0"
                    step="0.5"
                    placeholder="z. B. 50">
           </div>
 
           <div>
-            <label for="hours">Geschätzte Arbeitsstunden</label>
-            <input class="field"
+            <label for="hours">
+              Geschätzte Arbeitsstunden
+            </label>
+            <input type="number"
                    id="hours"
-                   type="number"
                    min="0"
                    step="0.5"
                    placeholder="z. B. 8">
           </div>
+
         </div>
 
-        <p><strong>Gewünschte Arbeiten</strong></p>
-
-        <div id="workChecks" class="checks"></div>
+        <label>Gewünschte Arbeiten *</label>
+        <div class="checks" id="workChecks"></div>
 
         <div id="qualityBox">
-          <label for="quality">Oberflächenqualität</label>
-          <select id="quality" class="field">
-            <option value="Noch unklar">Noch unklar</option>
-            <option value="Q1">Q1 – Grundverspachtelung</option>
-            <option value="Q2">Q2 – Standardverspachtelung</option>
-            <option value="Q3">Q3 – Sonderverspachtelung</option>
-            <option value="Q4">Q4 – höchste Oberflächengüte</option>
+          <label for="quality">
+            Oberflächenqualität
+          </label>
+
+          <select id="quality">
+            <option value="Noch unklar">
+              Noch unklar
+            </option>
+            <option value="Q1">
+              Q1 – Grundverspachtelung
+            </option>
+            <option value="Q2">
+              Q2 – Standardverspachtelung
+            </option>
+            <option value="Q3">
+              Q3 – Sonderverspachtelung
+            </option>
+            <option value="Q4">
+              Q4 – höchste Oberflächengüte
+            </option>
           </select>
         </div>
 
-        <div id="extras"></div>
+        <div id="extraFields"></div>
 
-        <label for="city">Projektort</label>
-        <input id="city"
-               class="field"
-               type="text"
-               maxlength="100"
-               placeholder="z. B. Herne">
+        <div class="two">
 
-        <label for="date">Gewünschter Termin</label>
-        <input id="date" class="field" type="date">
+          <div>
+            <label for="city">Projektort</label>
+            <input type="text"
+                   id="city"
+                   maxlength="100"
+                   placeholder="z. B. Herne">
+          </div>
 
-        <label for="message">Weitere Informationen</label>
+          <div>
+            <label for="date">
+              Gewünschter Termin
+            </label>
+            <input type="date" id="date">
+          </div>
+
+        </div>
+
+        <label for="message">
+          Weitere Informationen
+        </label>
         <textarea id="message"
-                  class="field"
-                  rows="4"
                   maxlength="1500"
                   placeholder="Beschreiben Sie Ihr Projekt..."></textarea>
 
-        <label for="customerName">Ihr Name</label>
-        <input id="customerName"
-               class="field"
-               type="text"
-               maxlength="100"
-               required
-               placeholder="Vor- und Nachname">
+        <div class="two">
 
-        <label for="customerContact">Telefon oder E-Mail</label>
-        <input id="customerContact"
-               class="field"
-               type="text"
-               maxlength="150"
-               required
-               placeholder="Ihre Kontaktdaten">
+          <div>
+            <label for="customerName">
+              Ihr Name *
+            </label>
+            <input type="text"
+                   id="customerName"
+                   maxlength="100"
+                   required
+                   placeholder="Vor- und Nachname">
+          </div>
+
+          <div>
+            <label for="customerContact">
+              Telefon oder E-Mail *
+            </label>
+            <input type="text"
+                   id="customerContact"
+                   maxlength="150"
+                   required
+                   placeholder="Ihre Kontaktdaten">
+          </div>
+
+        </div>
 
       </form>
 
       <aside class="panel summary">
 
-        <h3>Ihre Projektübersicht</h3>
+        <h3>Ihre Anfrage im Überblick</h3>
 
         <div class="summary-row">
           <span>Dienstleistung</span>
@@ -759,11 +582,11 @@ footer a { margin: 0 12px; }
         </div>
 
         <div class="summary-row">
-          <span>Arbeiten</span>
+          <span>Gewünschte Arbeiten</span>
           <strong id="sumWorks"></strong>
         </div>
 
-        <div class="summary-row" id="sumQualityRow">
+        <div class="summary-row" id="qualityRow">
           <span>Oberflächenqualität</span>
           <strong id="sumQuality"></strong>
         </div>
@@ -778,49 +601,53 @@ footer a { margin: 0 12px; }
           <strong id="sumCity"></strong>
         </div>
 
+        <div class="summary-row">
+          <span>Wunschtermin</span>
+          <strong id="sumDate"></strong>
+        </div>
+
         <button class="btn"
                 type="submit"
                 form="requestForm">
-          E-Mail-Anfrage vorbereiten
+          Anfrage per E-Mail vorbereiten
         </button>
 
-        <p style="font-size:13px">
-          Die Anfrage ist unverbindlich.
+        <p>
+          Unverbindlich und kostenlos.
           Ihr E-Mail-Programm wird geöffnet.
-          Sie versenden die Nachricht selbst.
+          Sie versenden die Anfrage anschließend selbst.
         </p>
 
       </aside>
+
     </div>
   </div>
 </section>
 
-<section class="contact">
-  <div class="wrap">
+<section class="contact" id="kontakt">
 
-    <h2>PROJEKT IN PLANUNG?</h2>
+  <h2>G&T SAUBERSTARK GbR</h2>
 
-    <p>G&T Sauberstark GbR · Herne und Umgebung</p>
+  <p>Herne und Umgebung</p>
 
-    <p>
-      <a href="tel:+4917664951829">
-        0176 64951829
-      </a>
-    </p>
+  <a href="tel:+4917664951829">
+    0176 64951829
+  </a>
 
-    <p>
-      <a href="mailto:Hochdruckreinigung44@gmail.com">
-        Hochdruckreinigung44@gmail.com
-      </a>
-    </p>
+  <a href="mailto:Hochdruckreinigung44@gmail.com">
+    Hochdruckreinigung44@gmail.com
+  </a>
 
-  </div>
 </section>
 
 </main>
 
 <footer>
-  <p>© <span id="year"></span> G&T Sauberstark GbR</p>
+  <p>
+    © <span id="year"></span>
+    G&T Sauberstark GbR
+  </p>
+
   <a href="impressum.html">Impressum</a>
   <a href="datenschutz.html">Datenschutz</a>
 </footer>
@@ -828,98 +655,21 @@ footer a { margin: 0 12px; }
 <script>
 "use strict";
 
-/* VORHER-NACHHER-VERGLEICH */
-
-const compare = document.getElementById("compare");
-const afterScene = document.getElementById("afterScene");
-const divider = document.getElementById("divider");
-const handle = document.getElementById("handle");
-const compareRange = document.getElementById("compareRange");
-const comparePercent = document.getElementById("comparePercent");
-
-function setCompare(value) {
-  const percent = Math.max(0, Math.min(100, Number(value)));
-
-  afterScene.style.clipPath =
-    `inset(0 ${100 - percent}% 0 0)`;
-
-  divider.style.left = percent + "%";
-  handle.style.left = percent + "%";
-  compareRange.value = percent;
-
-  comparePercent.textContent =
-    Math.round(percent) + " % fertig";
-}
-
-let activePointer = null;
-
-function movePointer(event) {
-  const rect = compare.getBoundingClientRect();
-
-  const percent =
-    ((event.clientX - rect.left) / rect.width) * 100;
-
-  setCompare(percent);
-}
-
-compare.addEventListener("pointerdown", event => {
-  if (event.pointerType === "mouse" && event.button !== 0) {
-    return;
-  }
-
-  activePointer = event.pointerId;
-
-  compare.setPointerCapture(event.pointerId);
-  movePointer(event);
-});
-
-compare.addEventListener("pointermove", event => {
-  if (activePointer === event.pointerId) {
-    movePointer(event);
-  }
-});
-
-function stopPointer(event) {
-  if (activePointer === event.pointerId) {
-    activePointer = null;
-  }
-}
-
-compare.addEventListener("pointerup", stopPointer);
-compare.addEventListener("pointercancel", stopPointer);
-compare.addEventListener("lostpointercapture", () => {
-  activePointer = null;
-});
-
-compareRange.addEventListener("input", event => {
-  setCompare(event.target.value);
-});
-
-document.querySelectorAll("[data-position]").forEach(button => {
-  button.addEventListener("click", () => {
-    setCompare(button.dataset.position);
-  });
-});
-
-setCompare(50);
-
-/* DIENSTLEISTUNGEN UND FORMULARE */
-
 const services = {
-  trockenbau: {
-    name: "Trockenbau & Spachteln",
-    quality: true,
-    works: [
+  trockenbau:{
+    name:"Trockenbau & Spachteln",
+    quality:true,
+    works:[
       "Trockenbauwand",
       "Beplankung",
       "Spachtelarbeiten",
       "Schleifarbeiten",
       "Deckenbekleidung"
     ],
-    extras: [
+    extras:[
       {
-        label: "Wandart",
-        options: [
+        label:"Wandart",
+        options:[
           "Noch unklar",
           "Nichttragende Trennwand",
           "Vorsatzschale",
@@ -930,19 +680,19 @@ const services = {
     ]
   },
 
-  reinigung: {
-    name: "Gebäudereinigung",
-    works: [
+  reinigung:{
+    name:"Gebäudereinigung",
+    works:[
       "Unterhaltsreinigung",
       "Grundreinigung",
       "Fensterreinigung",
       "Bauendreinigung",
       "Treppenhausreinigung"
     ],
-    extras: [
+    extras:[
       {
-        label: "Reinigungsintervall",
-        options: [
+        label:"Reinigungshäufigkeit",
+        options:[
           "Einmalig",
           "Wöchentlich",
           "Alle zwei Wochen",
@@ -953,19 +703,20 @@ const services = {
     ]
   },
 
-  entruempelung: {
-    name: "Entrümpelung",
-    works: [
+  entruempelung:{
+    name:"Entrümpelung",
+    works:[
       "Wohnung",
       "Keller",
       "Garage",
       "Dachboden",
-      "Abtransport und Entsorgung"
+      "Abtransport",
+      "Entsorgung"
     ],
-    extras: [
+    extras:[
       {
-        label: "Etage",
-        options: [
+        label:"Etage",
+        options:[
           "Erdgeschoss",
           "1. Etage",
           "2. Etage",
@@ -974,8 +725,8 @@ const services = {
         ]
       },
       {
-        label: "Aufzug vorhanden?",
-        options: [
+        label:"Aufzug vorhanden?",
+        options:[
           "Noch unklar",
           "Ja",
           "Nein"
@@ -984,20 +735,20 @@ const services = {
     ]
   },
 
-  hochdruck: {
-    name: "Hochdruckreinigung",
-    works: [
+  hochdruck:{
+    name:"Hochdruckreinigung",
+    works:[
       "Terrasse",
       "Einfahrt",
-      "Pflastersteine",
+      "Pflaster",
       "Hof",
       "Andere Außenfläche"
     ],
-    extras: [
+    extras:[
       {
-        label: "Untergrund",
-        options: [
-          "Pflaster",
+        label:"Untergrund",
+        options:[
+          "Pflastersteine",
           "Beton",
           "Naturstein",
           "Fliesen",
@@ -1005,8 +756,8 @@ const services = {
         ]
       },
       {
-        label: "Verschmutzungsgrad",
-        options: [
+        label:"Verschmutzung",
+        options:[
           "Leicht",
           "Mittel",
           "Stark",
@@ -1016,19 +767,19 @@ const services = {
     ]
   },
 
-  garten: {
-    name: "Gartenpflege",
-    works: [
-      "Rasen mähen",
-      "Hecken schneiden",
-      "Unkraut entfernen",
+  garten:{
+    name:"Gartenpflege",
+    works:[
+      "Rasenmähen",
+      "Heckenschnitt",
+      "Unkrautentfernung",
       "Laub entfernen",
       "Allgemeine Gartenpflege"
     ],
-    extras: [
+    extras:[
       {
-        label: "Pflegeintervall",
-        options: [
+        label:"Pflegeintervall",
+        options:[
           "Einmalig",
           "Wöchentlich",
           "Monatlich",
@@ -1038,19 +789,19 @@ const services = {
     ]
   },
 
-  hausmeister: {
-    name: "Hausmeisterhilfe",
-    works: [
+  hausmeister:{
+    name:"Hausmeisterhilfe",
+    works:[
       "Objektkontrolle",
       "Außenanlagenpflege",
       "Treppenhausbetreuung",
       "Kleine Hilfsarbeiten",
-      "Regelmäßige Objektbetreuung"
+      "Regelmäßige Betreuung"
     ],
-    extras: [
+    extras:[
       {
-        label: "Objektart",
-        options: [
+        label:"Objektart",
+        options:[
           "Wohnhaus",
           "Mehrfamilienhaus",
           "Gewerbeobjekt",
@@ -1058,8 +809,8 @@ const services = {
         ]
       },
       {
-        label: "Betreuungsintervall",
-        options: [
+        label:"Betreuung",
+        options:[
           "Einmalig",
           "Wöchentlich",
           "Monatlich",
@@ -1069,18 +820,18 @@ const services = {
     ]
   },
 
-  montage: {
-    name: "Montagehilfe",
-    works: [
+  montage:{
+    name:"Montagehilfe",
+    works:[
       "Möbelmontage",
       "Küchenmontagehilfe",
       "Demontage",
       "Allgemeine Montagehilfe"
     ],
-    extras: [
+    extras:[
       {
-        label: "Etage",
-        options: [
+        label:"Etage",
+        options:[
           "Erdgeschoss",
           "1.–2. Etage",
           "3. Etage oder höher",
@@ -1091,216 +842,224 @@ const services = {
   }
 };
 
-const form = document.getElementById("requestForm");
-const serviceSelect = document.getElementById("serviceSelect");
-const workChecks = document.getElementById("workChecks");
-const extras = document.getElementById("extras");
-const qualityBox = document.getElementById("qualityBox");
-const quality = document.getElementById("quality");
+const form =
+  document.getElementById("requestForm");
 
-Object.entries(services).forEach(([key, service]) => {
-  const option = document.createElement("option");
-  option.value = key;
-  option.textContent = service.name;
+const serviceSelect =
+  document.getElementById("serviceSelect");
+
+const workChecks =
+  document.getElementById("workChecks");
+
+const extraFields =
+  document.getElementById("extraFields");
+
+const qualityBox =
+  document.getElementById("qualityBox");
+
+const quality =
+  document.getElementById("quality");
+
+function setText(id,text){
+  document.getElementById(id).textContent=text;
+}
+
+Object.entries(services).forEach(([key,service])=>{
+  const option=document.createElement("option");
+  option.value=key;
+  option.textContent=service.name;
   serviceSelect.append(option);
 });
 
-function setText(id, value) {
-  document.getElementById(id).textContent = value;
+function getWorks(){
+  return [
+    ...workChecks.querySelectorAll("input:checked")
+  ].map(input=>input.value);
 }
 
-function selectedWorks() {
-  return [...workChecks.querySelectorAll("input:checked")]
-    .map(input => input.value);
-}
-
-function extraValues() {
-  return [...extras.querySelectorAll("select")].map(select => ({
-    label: select.dataset.label,
-    value: select.value
+function getExtras(){
+  return [
+    ...extraFields.querySelectorAll("select")
+  ].map(select=>({
+    label:select.dataset.label,
+    value:select.value
   }));
 }
 
-function renderService(key, scroll = false) {
-  if (!services[key]) return;
+function selectService(key,scroll=false){
 
-  const service = services[key];
+  if(!services[key])return;
 
-  serviceSelect.value = key;
-  setText("formTitle", service.name);
+  const service=services[key];
 
-  qualityBox.hidden = !service.quality;
+  serviceSelect.value=key;
+
+  setText("formTitle",service.name);
+
+  qualityBox.hidden=!service.quality;
 
   workChecks.replaceChildren();
+  extraFields.replaceChildren();
 
-  service.works.forEach((work, index) => {
-    const label = document.createElement("label");
-    label.className = "check";
+  service.works.forEach((work,index)=>{
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = work;
-    checkbox.checked = index === 0;
+    const label=document.createElement("label");
+    label.className="check";
 
-    const span = document.createElement("span");
-    span.textContent = work;
+    const checkbox=document.createElement("input");
+    checkbox.type="checkbox";
+    checkbox.value=work;
+    checkbox.checked=index===0;
 
-    label.append(checkbox, span);
+    const span=document.createElement("span");
+    span.textContent=work;
+
+    label.append(checkbox,span);
     workChecks.append(label);
   });
 
-  extras.replaceChildren();
+  (service.extras||[]).forEach((extra,index)=>{
 
-  (service.extras || []).forEach((extra, index) => {
-    const label = document.createElement("label");
-    const select = document.createElement("select");
+    const label=document.createElement("label");
+    const select=document.createElement("select");
 
-    const id = "extra_" + index;
+    const id="extra_"+index;
 
-    label.htmlFor = id;
-    label.textContent = extra.label;
+    label.htmlFor=id;
+    label.textContent=extra.label;
 
-    select.id = id;
-    select.className = "field";
-    select.dataset.label = extra.label;
+    select.id=id;
+    select.dataset.label=extra.label;
 
-    extra.options.forEach(value => {
-      const option = document.createElement("option");
-      option.value = value;
-      option.textContent = value;
+    extra.options.forEach(value=>{
+      const option=document.createElement("option");
+      option.value=value;
+      option.textContent=value;
       select.append(option);
     });
 
-    extras.append(label, select);
+    extraFields.append(label,select);
   });
 
-  document.querySelectorAll(".service-card").forEach(card => {
+  document.querySelectorAll(".service").forEach(card=>{
     card.setAttribute(
       "aria-pressed",
-      String(card.dataset.service === key)
+      String(card.dataset.service===key)
     );
   });
 
   updateSummary();
 
-  if (scroll) {
+  if(scroll){
     document.getElementById("anfrage").scrollIntoView({
-      behavior: window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches ? "auto" : "smooth",
-      block: "start"
+      behavior:"smooth",
+      block:"start"
     });
   }
 }
 
-function updateSummary() {
-  const service = services[serviceSelect.value];
+function updateSummary(){
 
-  const area = document.getElementById("area").value;
-  const hours = document.getElementById("hours").value;
-  const city = document.getElementById("city").value.trim();
+  const service=services[serviceSelect.value];
 
-  setText("sumService", service.name);
-  setText("sumArea", area ? area + " m²" : "Noch offen");
-  setText("sumHours", hours ? hours + " Stunden" : "Noch offen");
-  setText(
-    "sumWorks",
-    selectedWorks().join(", ") || "Keine Auswahl"
-  );
+  const area=document.getElementById("area").value;
+  const hours=document.getElementById("hours").value;
+  const city=document.getElementById("city").value;
+  const date=document.getElementById("date").value;
 
-  setText("sumQuality", quality.value);
+  setText("sumService",service.name);
+  setText("sumArea",area?area+" m²":"Noch offen");
+  setText("sumHours",hours?hours+" Stunden":"Noch offen");
+  setText("sumWorks",getWorks().join(", ")||"Keine Auswahl");
 
-  document.getElementById("sumQualityRow").hidden =
+  setText("sumQuality",quality.value);
+  document.getElementById("qualityRow").hidden=
     !service.quality;
 
   setText(
     "sumExtras",
-    extraValues()
-      .map(item => item.label + ": " + item.value)
-      .join(" · ") || "Keine weiteren Angaben"
+    getExtras()
+      .map(item=>item.label+": "+item.value)
+      .join(" · ")||"Keine Angaben"
   );
 
-  setText("sumCity", city || "Noch offen");
+  setText("sumCity",city||"Noch offen");
+  setText("sumDate",date||"Noch offen");
 }
 
-document.querySelectorAll(".service-card").forEach(card => {
-  card.addEventListener("click", () => {
-    renderService(card.dataset.service, true);
+document.querySelectorAll(".service").forEach(card=>{
+  card.addEventListener("click",()=>{
+    selectService(card.dataset.service,true);
   });
 });
 
-serviceSelect.addEventListener("change", () => {
-  renderService(serviceSelect.value);
+serviceSelect.addEventListener("change",()=>{
+  selectService(serviceSelect.value);
 });
 
-form.addEventListener("input", updateSummary);
-form.addEventListener("change", updateSummary);
+form.addEventListener("input",updateSummary);
+form.addEventListener("change",updateSummary);
 
-/* E-MAIL-ANFRAGE */
+form.addEventListener("submit",event=>{
 
-form.addEventListener("submit", event => {
   event.preventDefault();
 
-  if (!form.reportValidity()) return;
+  if(!form.reportValidity())return;
 
-  const works = selectedWorks();
-
-  if (!works.length) {
-    alert("Bitte mindestens eine Arbeit auswählen.");
+  if(!getWorks().length){
+    alert("Bitte wählen Sie mindestens eine Arbeit.");
     return;
   }
 
-  const service = services[serviceSelect.value];
+  const service=services[serviceSelect.value];
 
-  const value = id =>
-    document.getElementById(id).value.trim() || "Nicht angegeben";
+  const val=id=>
+    document.getElementById(id).value.trim()||
+    "Nicht angegeben";
 
-  const lines = [
+  const details=[
     "Guten Tag,",
     "",
     "ich möchte ein unverbindliches Angebot anfragen.",
     "",
-    "Dienstleistung: " + service.name,
-    "Fläche: " + value("area") + " m²",
-    "Geschätzte Arbeitsstunden: " + value("hours"),
-    "Gewünschte Arbeiten: " + works.join(", "),
-
+    "Dienstleistung: "+service.name,
+    "Fläche: "+(val("area")==="Nicht angegeben"
+      ?"Nicht angegeben":val("area")+" m²"),
+    "Arbeitsstunden: "+val("hours"),
+    "Arbeiten: "+getWorks().join(", "),
     ...(service.quality
-      ? ["Oberflächenqualität: " + quality.value]
-      : []),
-
-    ...extraValues().map(item =>
-      item.label + ": " + item.value
+      ?["Oberflächenqualität: "+quality.value]
+      :[]),
+    ...getExtras().map(item=>
+      item.label+": "+item.value
     ),
-
-    "Projektort: " + value("city"),
-    "Wunschtermin: " + value("date"),
-    "Weitere Informationen: " + value("message"),
+    "Projektort: "+val("city"),
+    "Wunschtermin: "+val("date"),
+    "Weitere Informationen: "+val("message"),
     "",
-    "Name: " + value("customerName"),
-    "Kontakt: " + value("customerContact"),
+    "Name: "+val("customerName"),
+    "Kontakt: "+val("customerContact"),
     "",
     "Mit freundlichen Grüßen",
-    value("customerName")
+    val("customerName")
   ];
 
-  const subject =
-    "Projektanfrage: " + service.name + " | G&T Sauberstark";
+  const subject=
+    "Projektanfrage – "+service.name+" | G&T Sauberstark";
 
-  const mailto =
-    "mailto:Hochdruckreinigung44@gmail.com" +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(lines.join("\n"));
+  const link=
+    "mailto:Hochdruckreinigung44@gmail.com"+
+    "?subject="+encodeURIComponent(subject)+
+    "&body="+encodeURIComponent(details.join("\n"));
 
-  window.location.href = mailto;
+  window.location.href=link;
 });
 
-document.getElementById("year").textContent =
+document.getElementById("year").textContent=
   new Date().getFullYear();
 
-renderService("trockenbau");
+selectService("trockenbau");
 </script>
 
 </body>
 </html>
-
